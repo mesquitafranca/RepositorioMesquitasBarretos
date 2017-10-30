@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetosMesquitasBarretos
 {
-    class ClasseAlbumMusical
+    class ClasseAlbumMusical: ClasseMidia
     {
     }
 }
