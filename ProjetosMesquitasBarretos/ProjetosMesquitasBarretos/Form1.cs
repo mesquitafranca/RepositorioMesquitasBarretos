@@ -19,7 +19,7 @@ namespace ProjetosMesquitasBarretos
 
         private void Botão_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Que começe o jogo!");
+            MessageBox.Show("Que começe the Game!");
         }
     }
 }
