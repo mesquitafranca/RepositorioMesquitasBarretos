@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClasseAlbumMusical.cs" />
+    <Compile Include="ClasseFoto.cs" />
+    <Compile Include="ClasseMídia.cs" />
+    <Compile Include="ClasseVídeo.cs" />
+    <Compile Include="ClassMúsica.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
