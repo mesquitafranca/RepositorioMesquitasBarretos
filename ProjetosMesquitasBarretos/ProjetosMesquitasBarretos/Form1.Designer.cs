@@ -28,34 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Botão = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // Botão
-            // 
-            this.Botão.Location = new System.Drawing.Point(103, 76);
-            this.Botão.Name = "Botão";
-            this.Botão.Size = new System.Drawing.Size(196, 127);
-            this.Botão.TabIndex = 0;
-            this.Botão.Text = "Botão";
-            this.Botão.UseVisualStyleBackColor = true;
-            this.Botão.Click += new System.EventHandler(this.Botão_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 306);
-            this.Controls.Add(this.Botão);
+            this.ClientSize = new System.Drawing.Size(786, 454);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "MesquitasBarretos Media Player";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button Botão;
     }
 }
 

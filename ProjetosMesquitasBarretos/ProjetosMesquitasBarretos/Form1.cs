@@ -21,5 +21,10 @@ namespace ProjetosMesquitasBarretos
         {
             MessageBox.Show("Que começe the Game!");
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
