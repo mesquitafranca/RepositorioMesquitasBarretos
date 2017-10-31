@@ -8,5 +8,6 @@ namespace ProjetosMesquitasBarretos
 {
     class ClasseVídeo: ClasseMidia
     {
+        bool possuilegenda;
     }
 }
