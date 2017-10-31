@@ -8,5 +8,6 @@ namespace ProjetosMesquitasBarretos
 {
     class ClasseAlbumMusical: ClasseMidia
     {
+        string artista;
     }
 }

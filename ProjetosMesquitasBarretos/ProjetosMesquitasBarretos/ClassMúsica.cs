@@ -8,5 +8,6 @@ namespace ProjetosMesquitasBarretos
 {
     class ClassMusica: ClasseMidia
     {
+        int volume;
     }
 }
