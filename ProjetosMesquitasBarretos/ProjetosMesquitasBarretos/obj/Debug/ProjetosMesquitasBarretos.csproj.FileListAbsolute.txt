@@ -8,3 +8,6 @@ Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\Projet
 Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.csproj.GenerateResource.Cache
 Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.exe
 Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.pdb
+C:\Users\082160008\Desktop\tramposo\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\bin\Debug\ProjetosMesquitasBarretos.exe.config
+C:\Users\082160008\Desktop\tramposo\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.exe
+C:\Users\082160008\Desktop\tramposo\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.pdb
