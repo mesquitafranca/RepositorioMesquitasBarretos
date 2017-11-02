@@ -8,7 +8,7 @@ namespace ProjetosMesquitasBarretos
 {
     interface ILocal
     {
-        string arquivoMidia
+        string ArquivoMidia
         {
             get;
             set;
