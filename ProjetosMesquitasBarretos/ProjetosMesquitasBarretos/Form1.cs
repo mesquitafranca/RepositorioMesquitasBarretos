@@ -10,17 +10,14 @@ using System.Windows.Forms;
 
 namespace ProjetosMesquitasBarretos
 {
-    public partial class Form1 : Form
+    public partial class Tela1 : Form
     {
-        public Form1()
+        public Tela1()
         {
             InitializeComponent();
         }
 
-        private void Botão_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Que começe the Game!");
-        }
+       
 
         private void Form1_Load(object sender, EventArgs e)
         {

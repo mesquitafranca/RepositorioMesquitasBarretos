@@ -3,7 +3,6 @@ Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\bin\Debug\Projet
 Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\bin\Debug\ProjetosMesquitasBarretos.exe
 Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\bin\Debug\ProjetosMesquitasBarretos.pdb
 Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.csprojResolveAssemblyReference.cache
-Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.Form1.resources
 Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.Properties.Resources.resources
 Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.csproj.GenerateResource.Cache
 Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.exe
@@ -11,3 +10,9 @@ Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\Projet
 C:\Users\082160008\Desktop\tramposo\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\bin\Debug\ProjetosMesquitasBarretos.exe.config
 C:\Users\082160008\Desktop\tramposo\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.exe
 C:\Users\082160008\Desktop\tramposo\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.pdb
+Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.Tela1.resources
+Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\bin\Debug\Interop.WMPLib.dll
+Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\bin\Debug\AxInterop.WMPLib.dll
+Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\Interop.WMPLib.dll
+Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\AxInterop.WMPLib.dll
+Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.csproj.ResolveComReference.cache
