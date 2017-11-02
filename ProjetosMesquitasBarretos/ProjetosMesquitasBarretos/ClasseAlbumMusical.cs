@@ -9,5 +9,22 @@ namespace ProjetosMesquitasBarretos
     class ClasseAlbumMusical: ClasseMidia
     {
         string artista;
+        
+
+        public string Artista
+        {
+            get
+            {
+                
+                return artista;
+            }
+
+            set
+            {
+                if (String.IsNullOrEmpty(value))
+                    throw new Exception("Digite um nome de artista válido !!!");
+                    artista = value;
+            }
+        }
     }
 }

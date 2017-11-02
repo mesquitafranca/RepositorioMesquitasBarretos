@@ -10,7 +10,47 @@ namespace ProjetosMesquitasBarretos
     {
         string local; //local onde a foto foi tirada
         double megaPixels;
-        int TempoEmSegundosParaExibir; //tempo em segundos que a foto será exibida no player
+        int tempoEmSegundosParaExibir; //tempo em segundos que a foto será exibida no player
 
+        public string Local
+        {
+            get
+            {
+                return local;
+            }
+
+            set
+            {
+                if (String.IsNullOrEmpty(value))
+                    throw new Exception("Digite um local válido !!!");
+                local = value;
+            }
+        }
+
+        public double MegaPixels
+        {
+            get
+            {
+                return megaPixels;
+            }
+
+            set
+            {
+                megaPixels = value;
+            }
+        }
+
+        public int TempoEmSegundosParaExibir
+        {
+            get
+            {
+                return tempoEmSegundosParaExibir;
+            }
+
+            set
+            {
+                tempoEmSegundosParaExibir = value;
+            }
+        }
     }
 }
