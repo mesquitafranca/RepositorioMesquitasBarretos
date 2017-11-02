@@ -10,25 +10,16 @@ using System.Windows.Forms;
 
 namespace ProjetosMesquitasBarretos
 {
-    public partial class Tela1 : Form
+    public partial class TelaSobre : Form
     {
-        public Tela1()
+        public TelaSobre()
         {
             InitializeComponent();
         }
 
-       
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void TelaSobre_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TelaSobre tela = new TelaSobre();
-
-            tela.ShowDialog();
         }
     }
 }
