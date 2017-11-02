@@ -16,4 +16,3 @@ Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\bin\Debug\AxInte
 Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\Interop.WMPLib.dll
 Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\AxInterop.WMPLib.dll
 Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.csproj.ResolveComReference.cache
-Z:\TRABALHO\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.TelaSobre.resources
