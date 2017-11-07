@@ -29,5 +29,16 @@ namespace ProjetosMesquitasBarretos
             TelaSobre sobre = new TelaSobre();
             sobre.ShowDialog();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cadastroDeMídiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaCadastro cadastro = new TelaCadastro();
+            cadastro.ShowDialog();
+        }
     }
 }

@@ -49,3 +49,4 @@ C:\Users\mesqu\Desktop\Trabalho V.3\ProjetosMesquitasBarretos\ProjetosMesquitasB
 C:\Users\mesqu\Desktop\Trabalho V.3\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.csproj.CoreCompileInputs.cache
 C:\Users\mesqu\Desktop\Trabalho V.3\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.exe
 C:\Users\mesqu\Desktop\Trabalho V.3\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.pdb
+C:\Users\mesqu\Desktop\Trabalho V.3\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.TelaCadastro.resources

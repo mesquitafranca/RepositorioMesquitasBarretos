@@ -59,6 +59,7 @@
             this.cadastroDeMídiaToolStripMenuItem.Name = "cadastroDeMídiaToolStripMenuItem";
             this.cadastroDeMídiaToolStripMenuItem.Size = new System.Drawing.Size(169, 29);
             this.cadastroDeMídiaToolStripMenuItem.Text = "Cadastro de Mídia";
+            this.cadastroDeMídiaToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeMídiaToolStripMenuItem_Click);
             // 
             // sobreToolStripMenuItem
             // 
@@ -85,6 +86,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1033, 614);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // listBox1
             // 
