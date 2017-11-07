@@ -248,13 +248,13 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Enabled = false;
             this.btnSalvar.Location = new System.Drawing.Point(525, 426);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(110, 82);
             this.btnSalvar.TabIndex = 22;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // TelaCadastro
             // 
@@ -283,6 +283,7 @@
             this.Controls.Add(this.radioFoto);
             this.Controls.Add(this.radioVideo);
             this.Controls.Add(this.radioMusica);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "TelaCadastro";
