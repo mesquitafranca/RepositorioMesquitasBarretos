@@ -19,11 +19,64 @@ namespace ProjetosMesquitasBarretos
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            textBox2.Visible = true;
+            apagarCampos();
+            labelAlbum.Visible = false;
+            labelArtista.Visible = false;
+            textAlbum.Visible = false;
+            textArtista.Visible = false;
+            textLocal.Visible = false;
+            labelLocal.Visible = false;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void radioMusica_CheckedChanged(object sender, EventArgs e)
+        {
+            apagarCampos();
+            labelAlbum.Visible = true;
+            labelArtista.Visible = true;
+            textAlbum.Visible = true;
+            textArtista.Visible = true;
+            textLocal.Visible = false;
+            labelLocal.Visible = false;
+        }
+
+        private void radioFoto_CheckedChanged(object sender, EventArgs e)
+        {
+            apagarCampos();
+            labelAlbum.Visible = false;
+            labelArtista.Visible = false;
+            textAlbum.Visible = false;
+            textArtista.Visible = false;
+            textLocal.Visible = true;
+            labelLocal.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                labelLink.Text = openFileDialog1.FileName;
+                labelLink.Visible = true;
+            }
+
+        }
+
+        private void apagarCampos()
+        {
+            textLocal.Clear();
+            textDescricao.Clear();
+            textArtista.Clear();
+            textAlbum.Clear();
+            textAno.Clear();
+            textId.Clear();
+            textNome.Clear();
+            labelLink.Text = "";
+            labelLink.Visible = false;
+
 
         }
     }

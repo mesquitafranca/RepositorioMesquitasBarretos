@@ -40,5 +40,7 @@ namespace ProjetosMesquitasBarretos
             TelaCadastro cadastro = new TelaCadastro();
             cadastro.ShowDialog();
         }
+
+        
     }
 }

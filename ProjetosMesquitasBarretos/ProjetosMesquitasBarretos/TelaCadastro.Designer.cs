@@ -40,11 +40,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textNome = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textAno = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelAlbum = new System.Windows.Forms.Label();
             this.textAlbum = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelArtista = new System.Windows.Forms.Label();
+            this.textArtista = new System.Windows.Forms.TextBox();
+            this.labelLocal = new System.Windows.Forms.Label();
+            this.textAno = new System.Windows.Forms.MaskedTextBox();
+            this.textLocal = new System.Windows.Forms.TextBox();
+            this.labelProcurar = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.labelLink = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // radioMusica
@@ -57,6 +64,7 @@
             this.radioMusica.TabStop = true;
             this.radioMusica.Text = "Música";
             this.radioMusica.UseVisualStyleBackColor = true;
+            this.radioMusica.CheckedChanged += new System.EventHandler(this.radioMusica_CheckedChanged);
             // 
             // radioVideo
             // 
@@ -80,6 +88,7 @@
             this.radioFoto.TabStop = true;
             this.radioFoto.Text = "Foto";
             this.radioFoto.UseVisualStyleBackColor = true;
+            this.radioFoto.CheckedChanged += new System.EventHandler(this.radioFoto_CheckedChanged);
             // 
             // label1
             // 
@@ -102,7 +111,7 @@
             // textId
             // 
             this.textId.Location = new System.Drawing.Point(71, 161);
-            this.textId.Mask = "999999";
+            this.textId.Mask = "99";
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(100, 26);
             this.textId.TabIndex = 5;
@@ -148,21 +157,14 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Ano";
             // 
-            // textAno
+            // labelAlbum
             // 
-            this.textAno.Location = new System.Drawing.Point(121, 299);
-            this.textAno.Name = "textAno";
-            this.textAno.Size = new System.Drawing.Size(288, 26);
-            this.textAno.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(30, 359);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 20);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Album";
+            this.labelAlbum.AutoSize = true;
+            this.labelAlbum.Location = new System.Drawing.Point(30, 359);
+            this.labelAlbum.Name = "labelAlbum";
+            this.labelAlbum.Size = new System.Drawing.Size(54, 20);
+            this.labelAlbum.TabIndex = 12;
+            this.labelAlbum.Text = "Album";
             // 
             // textAlbum
             // 
@@ -171,32 +173,105 @@
             this.textAlbum.Size = new System.Drawing.Size(288, 26);
             this.textAlbum.TabIndex = 13;
             // 
-            // label7
+            // labelArtista
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(31, 421);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 20);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Artista";
+            this.labelArtista.AutoSize = true;
+            this.labelArtista.Location = new System.Drawing.Point(30, 421);
+            this.labelArtista.Name = "labelArtista";
+            this.labelArtista.Size = new System.Drawing.Size(55, 20);
+            this.labelArtista.TabIndex = 14;
+            this.labelArtista.Text = "Artista";
             // 
-            // textBox1
+            // textArtista
             // 
-            this.textBox1.Location = new System.Drawing.Point(121, 421);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(288, 26);
-            this.textBox1.TabIndex = 15;
+            this.textArtista.Location = new System.Drawing.Point(121, 415);
+            this.textArtista.Name = "textArtista";
+            this.textArtista.Size = new System.Drawing.Size(288, 26);
+            this.textArtista.TabIndex = 15;
+            // 
+            // labelLocal
+            // 
+            this.labelLocal.AutoSize = true;
+            this.labelLocal.Location = new System.Drawing.Point(30, 359);
+            this.labelLocal.Name = "labelLocal";
+            this.labelLocal.Size = new System.Drawing.Size(47, 20);
+            this.labelLocal.TabIndex = 16;
+            this.labelLocal.Text = "Local";
+            // 
+            // textAno
+            // 
+            this.textAno.Location = new System.Drawing.Point(121, 299);
+            this.textAno.Mask = "9999";
+            this.textAno.Name = "textAno";
+            this.textAno.Size = new System.Drawing.Size(288, 26);
+            this.textAno.TabIndex = 17;
+            // 
+            // textLocal
+            // 
+            this.textLocal.Location = new System.Drawing.Point(121, 356);
+            this.textLocal.Name = "textLocal";
+            this.textLocal.Size = new System.Drawing.Size(288, 26);
+            this.textLocal.TabIndex = 18;
+            // 
+            // labelProcurar
+            // 
+            this.labelProcurar.AutoSize = true;
+            this.labelProcurar.Location = new System.Drawing.Point(30, 488);
+            this.labelProcurar.Name = "labelProcurar";
+            this.labelProcurar.Size = new System.Drawing.Size(138, 20);
+            this.labelProcurar.TabIndex = 19;
+            this.labelProcurar.Text = "Procurar Arquivo...";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(34, 521);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 39);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Procurar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // labelLink
+            // 
+            this.labelLink.AutoSize = true;
+            this.labelLink.Location = new System.Drawing.Point(30, 579);
+            this.labelLink.Name = "labelLink";
+            this.labelLink.Size = new System.Drawing.Size(51, 20);
+            this.labelLink.TabIndex = 21;
+            this.labelLink.Text = "label6";
+            this.labelLink.Visible = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Enabled = false;
+            this.btnSalvar.Location = new System.Drawing.Point(525, 426);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(110, 82);
+            this.btnSalvar.TabIndex = 22;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
             // 
             // TelaCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 608);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textAlbum);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.labelLink);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.labelProcurar);
+            this.Controls.Add(this.textLocal);
             this.Controls.Add(this.textAno);
+            this.Controls.Add(this.labelLocal);
+            this.Controls.Add(this.textArtista);
+            this.Controls.Add(this.labelArtista);
+            this.Controls.Add(this.textAlbum);
+            this.Controls.Add(this.labelAlbum);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textNome);
             this.Controls.Add(this.label4);
@@ -209,6 +284,7 @@
             this.Controls.Add(this.radioVideo);
             this.Controls.Add(this.radioMusica);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "TelaCadastro";
             this.Text = "Cadastro de Mídia";
             this.ResumeLayout(false);
@@ -229,10 +305,17 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textNome;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textAno;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelAlbum;
         private System.Windows.Forms.TextBox textAlbum;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label labelArtista;
+        private System.Windows.Forms.TextBox textArtista;
+        private System.Windows.Forms.Label labelLocal;
+        private System.Windows.Forms.MaskedTextBox textAno;
+        private System.Windows.Forms.TextBox textLocal;
+        private System.Windows.Forms.Label labelProcurar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelLink;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btnSalvar;
     }
 }
