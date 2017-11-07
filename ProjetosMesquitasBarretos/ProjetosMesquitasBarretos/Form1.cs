@@ -23,5 +23,11 @@ namespace ProjetosMesquitasBarretos
         {
 
         }
+
+        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaSobre sobre = new TelaSobre();
+            sobre.ShowDialog();
+        }
     }
 }
