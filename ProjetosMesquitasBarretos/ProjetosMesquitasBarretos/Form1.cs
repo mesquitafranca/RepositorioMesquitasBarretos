@@ -41,6 +41,14 @@ namespace ProjetosMesquitasBarretos
             cadastro.ShowDialog();
         }
 
-        
+        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void informaçãoSobreAMídiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

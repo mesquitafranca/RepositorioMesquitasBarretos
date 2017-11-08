@@ -36,6 +36,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.labelNomeNaTela = new System.Windows.Forms.Label();
+            this.informaçãoSobreAMídiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -46,6 +50,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroDeMídiaToolStripMenuItem,
+            this.informaçãoSobreAMídiaToolStripMenuItem,
             this.sobreToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -76,15 +81,16 @@
             this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(1033, 614);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(1033, 592);
             this.axWindowsMediaPlayer1.TabIndex = 1;
+            this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.axWindowsMediaPlayer1);
             this.panel1.Location = new System.Drawing.Point(12, 38);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1033, 614);
+            this.panel1.Size = new System.Drawing.Size(1033, 592);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -92,9 +98,9 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(1051, 109);
+            this.listBox1.Location = new System.Drawing.Point(1051, 87);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(194, 124);
+            this.listBox1.Size = new System.Drawing.Size(194, 184);
             this.listBox1.TabIndex = 3;
             // 
             // label1
@@ -102,15 +108,52 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(1052, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 20);
+            this.label1.Size = new System.Drawing.Size(185, 20);
             this.label1.TabIndex = 4;
-            this.label1.Text = "PLAYLIST";
+            this.label1.Text = "MÍDIAS CARREGADAS";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1052, 315);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 20);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "PLAYLIST";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 20;
+            this.listBox2.Location = new System.Drawing.Point(1051, 352);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(194, 124);
+            this.listBox2.TabIndex = 6;
+            // 
+            // labelNomeNaTela
+            // 
+            this.labelNomeNaTela.AutoSize = true;
+            this.labelNomeNaTela.Location = new System.Drawing.Point(13, 637);
+            this.labelNomeNaTela.Name = "labelNomeNaTela";
+            this.labelNomeNaTela.Size = new System.Drawing.Size(114, 20);
+            this.labelNomeNaTela.TabIndex = 7;
+            this.labelNomeNaTela.Text = "Nome da Mídia";
+            // 
+            // informaçãoSobreAMídiaToolStripMenuItem
+            // 
+            this.informaçãoSobreAMídiaToolStripMenuItem.Name = "informaçãoSobreAMídiaToolStripMenuItem";
+            this.informaçãoSobreAMídiaToolStripMenuItem.Size = new System.Drawing.Size(236, 29);
+            this.informaçãoSobreAMídiaToolStripMenuItem.Text = "Informações sobre a Mídia";
+            this.informaçãoSobreAMídiaToolStripMenuItem.Click += new System.EventHandler(this.informaçãoSobreAMídiaToolStripMenuItem_Click);
             // 
             // Tela1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1258, 664);
+            this.Controls.Add(this.labelNomeNaTela);
+            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel1);
@@ -143,6 +186,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Label labelNomeNaTela;
+        private System.Windows.Forms.ToolStripMenuItem informaçãoSobreAMídiaToolStripMenuItem;
     }
 }
 
