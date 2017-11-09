@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace ProjetosMesquitasBarretos
 {
-    class ClasseAlbumMusical: ClasseMidia
+   public class ClasseAlbumMusical: ClasseMidia
     {
         string artista;
         
@@ -26,6 +26,10 @@ namespace ProjetosMesquitasBarretos
                     throw new Exception("Digite um nome de artista válido !!!");
                     artista = value;
             }
+        }
+        public override void Inclui()
+        {
+            Console.Write("Album");
         }
     }
 }

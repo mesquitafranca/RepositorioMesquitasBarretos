@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace ProjetosMesquitasBarretos
 {
-    class ClasseVídeo: ClasseMidia
+   public class ClasseVídeo: ClasseMidia
     {
         bool possuilegenda;
         private FormatoEnumVideo fvideo;
@@ -36,6 +36,11 @@ namespace ProjetosMesquitasBarretos
             {
                 fvideo = value;
             }
+        }
+
+        public override void Inclui()
+        {
+            Console.Write("Vídeo");
         }
     }
 }

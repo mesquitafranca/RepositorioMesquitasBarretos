@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace ProjetosMesquitasBarretos
 {
-    class ClasseMidia
+   public abstract class ClasseMidia
     {
         int id; //Identificação da música
         string descrição; //Comentários Gerais sobre a música
@@ -69,5 +69,7 @@ namespace ProjetosMesquitasBarretos
         {
           avi, wmv, mkv, mp4, mpeg, outros
         };
+
+        public abstract void Inclui();
     }
 }

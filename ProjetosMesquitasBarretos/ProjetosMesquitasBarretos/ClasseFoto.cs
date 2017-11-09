@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace ProjetosMesquitasBarretos
 {
-    class ClasseFoto: ClasseMidia
+   public class ClasseFoto: ClasseMidia
     {
         string local; //local onde a foto foi tirada
         double megaPixels;
@@ -52,6 +52,11 @@ namespace ProjetosMesquitasBarretos
             {
                 tempoEmSegundosParaExibir = value;
             }
+        }
+
+        public override void Inclui()
+        {
+            Console.Write("Foto");
         }
     }
 }

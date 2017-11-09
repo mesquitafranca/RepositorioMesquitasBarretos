@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace ProjetosMesquitasBarretos
 {
-    class ClassMusica: ClasseMidia,ILocal
+   public class ClassMusica: ClasseMidia,ILocal
     {
         string arquivomidia;
         int volume;
@@ -69,6 +69,11 @@ namespace ProjetosMesquitasBarretos
         public bool ValidaCaminho()
         {
             throw new NotImplementedException();
+        }
+
+        public override void Inclui()
+        {
+            Console.Write("Música"); 
         }
     }
 }
