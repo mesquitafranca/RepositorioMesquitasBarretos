@@ -84,30 +84,37 @@ namespace ProjetosMesquitasBarretos
         {
             if (radioMusica.Checked == true)
             {
-                if (textId.Text == "" | textNome.Text == "" | labelLink.Text == "" | textAlbum.Text == "")
+                ClassMusica musica = new ClassMusica();
+                if (textId.Text == "" | textNome.Text == ""  | textAlbum.Text == "")
                 {
                     MessageBox.Show("Os campos ID, Nome, Album e Procurar devem ser preenchidos");
                 }
-
+                musica.Inclui(textId.Text, textNome.Text, textArtista.Text, textLocal.Text);
             }
            
 
             if (radioVideo.Checked == true)
             {
-                if (textId.Text == "" | textNome.Text == "" | labelLink.Text == "")
+                ClasseVídeo video = new ClasseVídeo();
+                if (textId.Text == "" | textNome.Text == "" )
                 {
                     MessageBox.Show("Os campos ID, Nome e Procurar devem ser preenchidos");
                 }
+                video.Inclui(textId.Text, textNome.Text);
             }
 
             if (radioFoto.Checked == true)
             {
-                if (textId.Text == "" | textNome.Text == "" | labelLink.Text == "")
+                ClasseFoto foto = new ClasseFoto();
+                if (textId.Text == "" | textNome.Text == "")
                 {
                     MessageBox.Show("Os campos ID, Nome e Procurar devem ser preenchidos");
                 }
+                foto.Inclui(textId.Text, textNome.Text);
 
             }
+            
+            
         }
     }
 }

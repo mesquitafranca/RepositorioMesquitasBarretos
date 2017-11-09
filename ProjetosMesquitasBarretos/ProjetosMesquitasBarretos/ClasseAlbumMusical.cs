@@ -27,9 +27,6 @@ namespace ProjetosMesquitasBarretos
                     artista = value;
             }
         }
-        public override void Inclui()
-        {
-            Console.Write("Album");
-        }
+        
     }
 }

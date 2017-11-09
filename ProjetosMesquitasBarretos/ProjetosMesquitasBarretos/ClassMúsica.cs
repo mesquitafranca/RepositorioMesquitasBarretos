@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.IO;
 
 namespace ProjetosMesquitasBarretos
 {
@@ -71,9 +72,15 @@ namespace ProjetosMesquitasBarretos
             throw new NotImplementedException();
         }
 
-        public override void Inclui()
+        public void Inclui(string Id,string Nome,string artista,string local)
         {
-            Console.Write("Música"); 
+            string conteudo = Id+"|"+Nome+"|"+artista+"|"+local+Environment.NewLine;
+            if(File.Exists("dados.txt"))
+            {
+                File.AppendAllText("dados", conteudo);
+            }
+            else
+                File.WriteAllText("dados", conteudo);
         }
     }
 }

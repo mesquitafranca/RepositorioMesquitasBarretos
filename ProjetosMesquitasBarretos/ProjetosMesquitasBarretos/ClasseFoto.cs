@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.IO;
 
 namespace ProjetosMesquitasBarretos
 {
@@ -54,9 +55,16 @@ namespace ProjetosMesquitasBarretos
             }
         }
 
-        public override void Inclui()
+       public void Inclui(string Id, string Nome)
         {
-            Console.Write("Foto");
+            string conteudo = Id + "|" + Nome+Environment.NewLine;
+            if (File.Exists("dados.txt"))
+            {
+                File.AppendAllText("dados.txt", conteudo);
+            }
+            else
+                File.WriteAllText("dados.txt", conteudo);
+
         }
     }
 }

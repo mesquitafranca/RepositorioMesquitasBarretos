@@ -70,6 +70,6 @@ namespace ProjetosMesquitasBarretos
           avi, wmv, mkv, mp4, mpeg, outros
         };
 
-        public abstract void Inclui();
+        
     }
 }
