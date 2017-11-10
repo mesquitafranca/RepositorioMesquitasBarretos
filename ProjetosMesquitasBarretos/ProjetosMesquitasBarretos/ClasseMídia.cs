@@ -57,19 +57,6 @@ namespace ProjetosMesquitasBarretos
             }
         }
 
-        public enum FormatoEnumMusica
-        {
-            mp3,wav,wma
-        };
-        public enum IdiomaEnum
-        {
-            ingles,portugues,outros
-        };
-        public enum FormatoEnumVideo
-        {
-          avi, wmv, mkv, mp4, mpeg, outros
-        };
-
         
     }
 }

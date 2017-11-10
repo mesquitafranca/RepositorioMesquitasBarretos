@@ -11,7 +11,14 @@ namespace ProjetosMesquitasBarretos
    public class ClasseVídeo: ClasseMidia
     {
         bool possuilegenda;
-        private FormatoEnumVideo fvideo;
+        private FormatoEnumvideo fvideo;
+        private IdiomaEnum idiomaenum;
+
+        public IdiomaEnum Idiomaenum
+        {
+            get { return idiomaenum; }
+            set { idiomaenum = value; }
+        }
 
         public bool Possuilegenda
         {
@@ -26,7 +33,7 @@ namespace ProjetosMesquitasBarretos
             }
         }
 
-        public FormatoEnumVideo Fvideo
+        public FormatoEnumvideo Fvideo
         {
             get
             {
@@ -39,15 +46,15 @@ namespace ProjetosMesquitasBarretos
             }
         }
 
-        public void Inclui(string Id, string Nome)
+        public void Inclui(ClasseVídeo c)
         {
-            string conteudo = Id + "|" + Nome+Environment.NewLine;
+            string dados = "Id" + "|" + c.Id.ToString() + "|" + "Descrição" + "|" + c.Descrição.ToString() + "|" + "Dados" + "|" + c.ArquivoDeDados + "|" + "Formato" + "|" + c.Fvideo + "|" + "Idioma" + "|" + c.Idiomaenum + "|" + "Legenda"+c.Possuilegenda + Environment.NewLine;
             if (File.Exists("dados.txt"))
             {
-                File.AppendAllText("dados", conteudo);
+                File.AppendAllText("dados", dados);
             }
             else
-                File.WriteAllText("dados", conteudo);
+                File.WriteAllText("dados", dados);
         }
     }
 }
