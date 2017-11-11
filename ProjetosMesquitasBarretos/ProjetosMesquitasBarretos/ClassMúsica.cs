@@ -9,12 +9,17 @@ using System.Xml.Linq;
 
 namespace ProjetosMesquitasBarretos
 {
-   public class ClassMusica: ClasseMidia,ILocal
+    public enum FormatoEnummusica
+    {
+        mp3, wav, wma
+    }
+
+    public class ClassMusica: ClasseMidia,ILocal
     {
         string arquivomidia;
         int volume;
         double duracao;
-        private FormatoEnumMusica fmusica;
+        private FormatoEnummusica fmusica;
 
         public int Volume
         {
@@ -29,7 +34,7 @@ namespace ProjetosMesquitasBarretos
             }
         }
 
-        public FormatoEnumMusica Fmusica
+        public FormatoEnummusica Fmusica
         {
             get
             {
@@ -85,5 +90,6 @@ namespace ProjetosMesquitasBarretos
                File.WriteAllText("Mídia.txt", dados);
 
         }
+
     }
 }

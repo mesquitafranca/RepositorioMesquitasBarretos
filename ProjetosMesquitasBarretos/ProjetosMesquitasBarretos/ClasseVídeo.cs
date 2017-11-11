@@ -8,17 +8,23 @@ using System.IO;
 
 namespace ProjetosMesquitasBarretos
 {
-   public class ClasseVídeo: ClasseMidia
+    public enum IdiomaEnum
+    {
+        ingles, portugues, outros
+    }
+    public enum FormatoEnumVideo
+    {
+        AVI, WMV, MKV, MP4, MPEG, OUTROS
+    }
+    public class ClasseVídeo: ClasseMidia
     {
         bool possuilegenda;
-        private FormatoEnumvideo fvideo;
+        private FormatoEnumVideo fvideo;
         private IdiomaEnum idiomaenum;
 
-        public IdiomaEnum Idiomaenum
-        {
-            get { return idiomaenum; }
-            set { idiomaenum = value; }
-        }
+       
+
+        
 
         public bool Possuilegenda
         {
@@ -32,8 +38,9 @@ namespace ProjetosMesquitasBarretos
                 possuilegenda = value;
             }
         }
+       
 
-        public FormatoEnumvideo Fvideo
+        public FormatoEnumVideo Fvideo
         {
             get
             {
@@ -43,6 +50,19 @@ namespace ProjetosMesquitasBarretos
             set
             {
                 fvideo = value;
+            }
+        }
+
+        public IdiomaEnum Idiomaenum
+        {
+            get
+            {
+                return idiomaenum;
+            }
+
+            set
+            {
+                idiomaenum = value;
             }
         }
 
@@ -56,5 +76,7 @@ namespace ProjetosMesquitasBarretos
             else
                 File.WriteAllText("dados", dados);
         }
+
+        
     }
 }
