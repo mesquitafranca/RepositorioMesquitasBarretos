@@ -24,22 +24,39 @@ namespace ProjetosMesquitasBarretos
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
+
+            //Campos de Vídeos - ID, Descrição, Nome,  Diretório, Idioma, Formato , Possui Legenda?
             apagarCampos();
-            cbFormato.DataSource = Enum.GetValues(typeof(FormatoEnumVideo));
-            cbIdioma.DataSource = Enum.GetValues(typeof(IdiomaEnum));
-            labelAlbum.Visible = false;
-            labelDuracao.Visible = false;
-            textDuracao.Visible = false;
-            textVolume.Visible = false;
-            textMegaPixels.Visible = false;
-            label6.Visible = false;
-            label7.Visible = true;
+
+            //Campos Incluídos
+            labelIdioma.Visible = true;
+            labelFormato.Visible = true;
+
+            groupBoxLegenda.Visible = true;
             rbNao.Visible = true;
             rbSim.Visible = true;
             cbIdioma.Visible = true;
+            cbFormato.Visible = true;
+            cbFormato.DataSource = Enum.GetValues(typeof(FormatoEnumVideo));
+            cbIdioma.DataSource = Enum.GetValues(typeof(IdiomaEnum));
+
+            //Campos Excluídos
+            labelArtista.Visible = false;
+            labelAlbum.Visible = false;
+            labelVolume.Visible = false;
             labelMegaPixels.Visible = false;
+            labelDuracao.Visible = false;
+            labelLocal.Visible = false;
+            labelTempo.Visible = false;
+
+            textAlbum.Visible = false;
+            textArtista.Visible = false;
+            textTempo.Visible = false;
+            textDuracao.Visible = false;
+            textVolume.Visible = false;
             textMegaPixels.Visible = false;
-            groupBox1.Visible = true;
+            textLocal.Visible = false;
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -49,46 +66,80 @@ namespace ProjetosMesquitasBarretos
 
         private void radioMusica_CheckedChanged(object sender, EventArgs e)
         {
+            //Campos de Música - ID, Descrição, Nome, Artista, Album, Volume, Duração, Diretório, Formato
+
             apagarCampos();
+
+            //Campos Incluídos
+            labelVolume.Visible = true;
+            labelAlbum.Visible = true;
+            labelArtista.Visible = true;
+            labelDuracao.Visible = true;
+            labelFormato.Visible = true;
+
+            textVolume.Visible = true;
+            textAlbum.Visible = true;
+            textArtista.Visible = true;
+            textDuracao.Visible = true;
+            textAlbum.Visible = true;
+            cbFormato.Visible = true;
+            cbFormato.DataSource = Enum.GetValues(typeof(FormatoEnummusica));
+
+            //Campos Excluídos
 
             labelTempo.Visible = false;
             textTempo.Visible = false;
             cbIdioma.Visible = false;
-            label7.Visible = false;
+            labelIdioma.Visible = false;
             rbNao.Visible = false;
             rbSim.Visible = false;
             textMegaPixels.Visible = false;
             labelMegaPixels.Visible = false;
             labelLocal.Visible = false;
             textLocal.Visible = false;
-            groupBox1.Visible = false;
+            groupBoxLegenda.Visible = false;
         }
 
         private void radioFoto_CheckedChanged(object sender, EventArgs e)
         {
+            //Campos de Fotos - ID, Descrição, Nome,  Diretório, Local, MegaPixel, Tempo de exibição de cada foto
+
             apagarCampos();
-            label7.Visible = false;
-            cbIdioma.Visible = false;
-            label6.Visible = false;
-            rbNao.Visible = false;
-            rbSim.Visible = false;
-            labelDuracao.Visible = false;
-            textDuracao.Visible = false;
-            textVolume.Visible = false;
+
+            //Campos Incluídos
             labelLocal.Visible = true;
-            textLocal.Visible = true;
-            textMegaPixels.Visible = true;
             labelMegaPixels.Visible = true;
             labelTempo.Visible = true;
+
+            textLocal.Visible = true;
+            textMegaPixels.Visible = true;
             textTempo.Visible = true;
-            groupBox1.Visible = false;
+
+            //Campos Excluídos
+            labelIdioma.Visible = false;
+            labelDuracao.Visible = false;
+            labelVolume.Visible = false;
+            labelArtista.Visible = false;
+            labelAlbum.Visible = false;
+            labelFormato.Visible = false;
+
+            cbIdioma.Visible = false;
+            rbNao.Visible = false;
+            rbSim.Visible = false;
+            textDuracao.Visible = false;
+            textAlbum.Visible = false;
+            textArtista.Visible = false;
+            textVolume.Visible = false;
+            groupBoxLegenda.Visible = false;
+            cbFormato.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                
+                labelLink.Text = openFileDialog1.FileName;
+                labelLink.Visible = true;
             }
 
         }
@@ -99,7 +150,8 @@ namespace ProjetosMesquitasBarretos
             textDescricao.Clear();
             textId.Clear();
             textNome.Clear();
-            
+            labelLink.Text = "";
+            labelLink.Visible = false;
 
 
         }
@@ -113,7 +165,6 @@ namespace ProjetosMesquitasBarretos
                 {
                     ClassMusica musica = new ClassMusica();
                     musica.Id = Convert.ToInt32(textId.Text);
-                    musica.VerificaId(musica);
                     musica.Descrição = textDescricao.Text;
                     musica.ArquivoDeDados = "dados.txt";
                     musica.Fmusica = (FormatoEnummusica)cbFormato.SelectedItem;
@@ -134,7 +185,6 @@ namespace ProjetosMesquitasBarretos
                 {
                     ClasseVídeo video = new ClasseVídeo();
                     video.Id = Convert.ToInt32(textId.Text);
-                    video.VerificaId(video);
                     video.Descrição = textDescricao.Text;
                     video.ArquivoDeDados = "dados.txt";
                     video.Fvideo = (FormatoEnumVideo)cbFormato.SelectedItem;
@@ -156,7 +206,6 @@ namespace ProjetosMesquitasBarretos
                 {
                     ClasseFoto foto = new ClasseFoto();
                     foto.Id = Convert.ToInt32(textId.Text);
-                    foto.VerificaId(foto);
                     foto.Descrição = textDescricao.Text;
                     foto.ArquivoDeDados = "dados.txt";
                     foto.Local = textLocal.Text;
@@ -183,9 +232,25 @@ namespace ProjetosMesquitasBarretos
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
-            ClasseMidia.Excluir(Convert.ToInt16(txtId.Text));
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBoxLegenda_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExcluirMidia_Click(object sender, EventArgs e)
+        {
+            //Colocar Exceção
+            ClasseMidia.Excluir(Convert.ToInt16(maskedTextExcluido.Text));
         }
     }
 }

@@ -54,59 +54,58 @@ namespace ProjetosMesquitasBarretos
 
                 if (String.IsNullOrEmpty(value))
                     throw new Exception("Digite um caminho correto !!!");
-                    arquivoDeDados = value;
+                arquivoDeDados = value;
             }
         }
 
-       public virtual void VerificaId(ClasseMidia m)
-       {
-           if (File.Exists("Mídia.txt"))
-           {
-               string[] arquivo = File.ReadAllLines("Mídia.txt");
-               for (int i = 0; i < arquivo.Length; i++)
-               {
-                   string[]  dados = arquivo[i].Split('|');
-                   if (m.Id == Convert.ToInt32(dados[1]))
-                       throw new Exception("Este Id já foi cadastrado !!!");
-               }
-           }
-           else
-               return;
+        public virtual void VerificaId(ClasseMidia m)
+        {
+            if (File.Exists("Mídia.txt"))
+            {
+                string[] arquivo = File.ReadAllLines("Mídia.txt");
+                for (int i = 0; i < arquivo.Length; i++)
+                {
+                    string[] dados = arquivo[i].Split('|');
+                    if (m.Id == Convert.ToInt32(dados[1]))
+                        throw new Exception("Este Id já foi cadastrado !!!");
+                }
+            }
+            else
+                return;
 
-           
-       }
-       static public void Excluir(int m)
-       {
-           if (File.Exists("Mídia.txt"))
-           {
-               string[] arquivo = File.ReadAllLines("Mídia.txt");
-               for (int i = 0; i < arquivo.Length; i++)
-               {
-                   string[] dados = arquivo[i].Split('|');
-                   if (m == Convert.ToInt32(dados[1]))
-                   {
-                       for(int t=i;t<arquivo.Length;t++)
-                       {
-                           if (t == arquivo.Length - 1)
-                           {
-                               string[] aux = new string[arquivo.Length - 1];
-                               for (int p = 0; p < arquivo.Length-1;p++ )
-                               {
-                                   aux[p] = arquivo[p];
-                               }
-                                   File.WriteAllLines("Mídia.txt", aux);
-                               return;
-                           }
-                           else
-                               arquivo[t] = arquivo[t + 1];
-                       }
-                   }
-               }
-           }
-           else
-               return;
-       }
 
-        
+        }
+        static public void Excluir(int m)
+        {
+            if (File.Exists("Mídia.txt"))
+            {
+                string[] arquivo = File.ReadAllLines("Mídia.txt");
+                for (int i = 0; i < arquivo.Length; i++)
+                {
+                    string[] dados = arquivo[i].Split('|');
+                    if (m == Convert.ToInt32(dados[1]))
+                    {
+                        for (int t = i; t < arquivo.Length; t++)
+                        {
+                            if (t == arquivo.Length - 1)
+                            {
+                                string[] aux = new string[arquivo.Length - 1];
+                                for (int p = 0; p < arquivo.Length - 1; p++)
+                                {
+                                    aux[p] = arquivo[p];
+                                }
+                                File.WriteAllLines("Mídia.txt", aux);
+                                return;
+                            }
+                            else
+                                arquivo[t] = arquivo[t + 1];
+                        }
+                    }
+                }
+            }
+            else
+                return;
+        }
+
     }
 }
