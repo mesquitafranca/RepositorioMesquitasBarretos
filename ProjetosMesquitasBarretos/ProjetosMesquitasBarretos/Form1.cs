@@ -15,6 +15,7 @@ namespace ProjetosMesquitasBarretos
         public Tela1()
         {
             InitializeComponent();
+            
         }
 
        
@@ -43,12 +44,27 @@ namespace ProjetosMesquitasBarretos
 
         private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
         {
-
+            
         }
 
         private void informaçãoSobreAMídiaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void playlistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void novaPlaylistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
