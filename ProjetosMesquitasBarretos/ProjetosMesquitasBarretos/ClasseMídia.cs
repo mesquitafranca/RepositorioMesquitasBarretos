@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.IO;
 
 namespace ProjetosMesquitasBarretos
 {
@@ -56,6 +57,50 @@ namespace ProjetosMesquitasBarretos
                     arquivoDeDados = value;
             }
         }
+
+       public virtual void VerificaId(ClasseMidia m)
+       {
+           if (File.Exists("Mídia.txt"))
+           {
+               string[] arquivo = File.ReadAllLines("Mídia.txt");
+               for (int i = 0; i < arquivo.Length; i++)
+               {
+                   string[]  dados = arquivo[i].Split('|');
+                   if (m.Id == Convert.ToInt32(dados[1]))
+                       throw new Exception("Este Id já foi cadastrado !!!");
+               }
+           }
+           else
+               return;
+
+           
+       }
+       static public void Excluir(int m)
+       {
+           if (File.Exists("Mídia.txt"))
+           {
+               string[] arquivo = File.ReadAllLines("Mídia.txt");
+               for (int i = 0; i < arquivo.Length; i++)
+               {
+                   string[] dados = arquivo[i].Split('|');
+                   if (m == Convert.ToInt32(dados[1]))
+                   {
+                       for(int t=i;t<arquivo.Length;t++)
+                       {
+                           if (t == arquivo.Length - 1)
+                           {
+                               File.WriteAllLines("Mídia.txt", arquivo);
+                               return;
+                           }
+                           else
+                               arquivo[t] = arquivo[t + 1];
+                       }
+                   }
+               }
+           }
+           else
+               return;
+       }
 
         
     }
