@@ -10,7 +10,7 @@ namespace ProjetosMesquitasBarretos
 {
     public enum IdiomaEnum
     {
-        ingles, portugues, outros
+        Inglês, Português, Outros
     }
     public enum FormatoEnumVideo
     {
