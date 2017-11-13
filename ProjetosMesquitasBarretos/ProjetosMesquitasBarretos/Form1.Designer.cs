@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tela1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastroDeMídiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,18 +38,24 @@
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelNomeNaTela = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.rdTodasMidias = new System.Windows.Forms.RadioButton();
-            this.rdFotosPrincipal = new System.Windows.Forms.RadioButton();
-            this.rdVideosPrincipal = new System.Windows.Forms.RadioButton();
-            this.rdMusicaPrincipal = new System.Windows.Forms.RadioButton();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEscolherMidia = new System.Windows.Forms.Button();
+            this.fotoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.álbunsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.artistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playlistsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEscolherMusica = new System.Windows.Forms.Button();
+            this.ordemAlfabéticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -124,67 +131,6 @@
             this.labelNomeNaTela.TabIndex = 7;
             this.labelNomeNaTela.Text = "Selecione a Mídia...";
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.rdTodasMidias);
-            this.panel2.Controls.Add(this.rdFotosPrincipal);
-            this.panel2.Controls.Add(this.rdVideosPrincipal);
-            this.panel2.Controls.Add(this.rdMusicaPrincipal);
-            this.panel2.Location = new System.Drawing.Point(701, 32);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(131, 70);
-            this.panel2.TabIndex = 8;
-            // 
-            // rdTodasMidias
-            // 
-            this.rdTodasMidias.AutoSize = true;
-            this.rdTodasMidias.Checked = true;
-            this.rdTodasMidias.Location = new System.Drawing.Point(2, 10);
-            this.rdTodasMidias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.rdTodasMidias.Name = "rdTodasMidias";
-            this.rdTodasMidias.Size = new System.Drawing.Size(55, 17);
-            this.rdTodasMidias.TabIndex = 3;
-            this.rdTodasMidias.TabStop = true;
-            this.rdTodasMidias.Text = "Todos";
-            this.rdTodasMidias.UseVisualStyleBackColor = true;
-            // 
-            // rdFotosPrincipal
-            // 
-            this.rdFotosPrincipal.AutoSize = true;
-            this.rdFotosPrincipal.Location = new System.Drawing.Point(2, 36);
-            this.rdFotosPrincipal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.rdFotosPrincipal.Name = "rdFotosPrincipal";
-            this.rdFotosPrincipal.Size = new System.Drawing.Size(51, 17);
-            this.rdFotosPrincipal.TabIndex = 2;
-            this.rdFotosPrincipal.TabStop = true;
-            this.rdFotosPrincipal.Text = "Fotos";
-            this.rdFotosPrincipal.UseVisualStyleBackColor = true;
-            // 
-            // rdVideosPrincipal
-            // 
-            this.rdVideosPrincipal.AutoSize = true;
-            this.rdVideosPrincipal.Location = new System.Drawing.Point(71, 10);
-            this.rdVideosPrincipal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.rdVideosPrincipal.Name = "rdVideosPrincipal";
-            this.rdVideosPrincipal.Size = new System.Drawing.Size(59, 17);
-            this.rdVideosPrincipal.TabIndex = 1;
-            this.rdVideosPrincipal.TabStop = true;
-            this.rdVideosPrincipal.Text = "Vídeos";
-            this.rdVideosPrincipal.UseVisualStyleBackColor = true;
-            // 
-            // rdMusicaPrincipal
-            // 
-            this.rdMusicaPrincipal.AutoSize = true;
-            this.rdMusicaPrincipal.Location = new System.Drawing.Point(71, 36);
-            this.rdMusicaPrincipal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.rdMusicaPrincipal.Name = "rdMusicaPrincipal";
-            this.rdMusicaPrincipal.Size = new System.Drawing.Size(59, 17);
-            this.rdMusicaPrincipal.TabIndex = 0;
-            this.rdMusicaPrincipal.TabStop = true;
-            this.rdMusicaPrincipal.Text = "Música";
-            this.rdMusicaPrincipal.UseVisualStyleBackColor = true;
-            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -194,32 +140,103 @@
             this.listBox1.Size = new System.Drawing.Size(130, 134);
             this.listBox1.TabIndex = 9;
             // 
-            // label1
+            // contextMenuStrip1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(700, 120);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Álbuns";
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aToolStripMenuItem,
+            this.bToolStripMenuItem,
+            this.cToolStripMenuItem,
+            this.fotoToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(162, 92);
             // 
-            // listBox2
+            // aToolStripMenuItem
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(701, 136);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(126, 56);
-            this.listBox2.TabIndex = 11;
+            this.aToolStripMenuItem.Name = "aToolStripMenuItem";
+            this.aToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.aToolStripMenuItem.Text = "Todas as Mídias ";
+            // 
+            // bToolStripMenuItem
+            // 
+            this.bToolStripMenuItem.Name = "bToolStripMenuItem";
+            this.bToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.bToolStripMenuItem.Text = "Música";
+            // 
+            // cToolStripMenuItem
+            // 
+            this.cToolStripMenuItem.Name = "cToolStripMenuItem";
+            this.cToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.cToolStripMenuItem.Text = "Vídeo";
+            // 
+            // btnEscolherMidia
+            // 
+            this.btnEscolherMidia.ContextMenuStrip = this.contextMenuStrip1;
+            this.btnEscolherMidia.Location = new System.Drawing.Point(703, 36);
+            this.btnEscolherMidia.Name = "btnEscolherMidia";
+            this.btnEscolherMidia.Size = new System.Drawing.Size(103, 23);
+            this.btnEscolherMidia.TabIndex = 13;
+            this.btnEscolherMidia.Text = "Todas as Mídias";
+            this.btnEscolherMidia.UseVisualStyleBackColor = true;
+            // 
+            // fotoToolStripMenuItem
+            // 
+            this.fotoToolStripMenuItem.Name = "fotoToolStripMenuItem";
+            this.fotoToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.fotoToolStripMenuItem.Text = "Foto";
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ordemAlfabéticaToolStripMenuItem,
+            this.álbunsToolStripMenuItem,
+            this.artistasToolStripMenuItem,
+            this.playlistsToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(168, 92);
+            // 
+            // álbunsToolStripMenuItem
+            // 
+            this.álbunsToolStripMenuItem.Name = "álbunsToolStripMenuItem";
+            this.álbunsToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.álbunsToolStripMenuItem.Text = "Álbuns";
+            // 
+            // artistasToolStripMenuItem
+            // 
+            this.artistasToolStripMenuItem.Name = "artistasToolStripMenuItem";
+            this.artistasToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.artistasToolStripMenuItem.Text = "Artistas";
+            // 
+            // playlistsToolStripMenuItem
+            // 
+            this.playlistsToolStripMenuItem.Name = "playlistsToolStripMenuItem";
+            this.playlistsToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.playlistsToolStripMenuItem.Text = "Playlists";
+            // 
+            // btnEscolherMusica
+            // 
+            this.btnEscolherMusica.ContextMenuStrip = this.contextMenuStrip2;
+            this.btnEscolherMusica.Location = new System.Drawing.Point(703, 87);
+            this.btnEscolherMusica.Name = "btnEscolherMusica";
+            this.btnEscolherMusica.Size = new System.Drawing.Size(103, 23);
+            this.btnEscolherMusica.TabIndex = 15;
+            this.btnEscolherMusica.Text = "button2";
+            this.btnEscolherMusica.UseVisualStyleBackColor = true;
+            // 
+            // ordemAlfabéticaToolStripMenuItem
+            // 
+            this.ordemAlfabéticaToolStripMenuItem.Name = "ordemAlfabéticaToolStripMenuItem";
+            this.ordemAlfabéticaToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.ordemAlfabéticaToolStripMenuItem.Text = "Ordem Alfabética";
             // 
             // Tela1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 432);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnEscolherMusica);
+            this.Controls.Add(this.btnEscolherMidia);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.labelNomeNaTela);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -236,8 +253,8 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,14 +270,19 @@
         private System.Windows.Forms.Label labelNomeNaTela;
         private System.Windows.Forms.ToolStripMenuItem informaçãoSobreAMídiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem novaPlaylistToolStripMenuItem;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton rdVideosPrincipal;
-        private System.Windows.Forms.RadioButton rdMusicaPrincipal;
-        private System.Windows.Forms.RadioButton rdTodasMidias;
-        private System.Windows.Forms.RadioButton rdFotosPrincipal;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cToolStripMenuItem;
+        private System.Windows.Forms.Button btnEscolherMidia;
+        private System.Windows.Forms.ToolStripMenuItem fotoToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem ordemAlfabéticaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem álbunsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem artistasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem playlistsToolStripMenuItem;
+        private System.Windows.Forms.Button btnEscolherMusica;
     }
 }
 
