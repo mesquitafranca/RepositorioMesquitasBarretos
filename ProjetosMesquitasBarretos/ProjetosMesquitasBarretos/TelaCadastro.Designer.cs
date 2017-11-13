@@ -69,6 +69,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.maskedTextExcluido = new System.Windows.Forms.MaskedTextBox();
             this.btnExcluirMidia = new System.Windows.Forms.Button();
+            this.labelAno = new System.Windows.Forms.Label();
+            this.TextBoxAno = new System.Windows.Forms.MaskedTextBox();
             this.groupBoxLegenda.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +78,7 @@
             // 
             this.radioMusica.AutoSize = true;
             this.radioMusica.Location = new System.Drawing.Point(20, 41);
-            this.radioMusica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioMusica.Margin = new System.Windows.Forms.Padding(2);
             this.radioMusica.Name = "radioMusica";
             this.radioMusica.Size = new System.Drawing.Size(59, 17);
             this.radioMusica.TabIndex = 0;
@@ -89,7 +91,7 @@
             // 
             this.radioVideo.AutoSize = true;
             this.radioVideo.Location = new System.Drawing.Point(189, 41);
-            this.radioVideo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioVideo.Margin = new System.Windows.Forms.Padding(2);
             this.radioVideo.Name = "radioVideo";
             this.radioVideo.Size = new System.Drawing.Size(54, 17);
             this.radioVideo.TabIndex = 1;
@@ -102,7 +104,7 @@
             // 
             this.radioFoto.AutoSize = true;
             this.radioFoto.Location = new System.Drawing.Point(373, 41);
-            this.radioFoto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioFoto.Margin = new System.Windows.Forms.Padding(2);
             this.radioFoto.Name = "radioFoto";
             this.radioFoto.Size = new System.Drawing.Size(46, 17);
             this.radioFoto.TabIndex = 2;
@@ -134,7 +136,7 @@
             // textId
             // 
             this.textId.Location = new System.Drawing.Point(47, 105);
-            this.textId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textId.Margin = new System.Windows.Forms.Padding(2);
             this.textId.Mask = "99";
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(68, 20);
@@ -154,7 +156,7 @@
             // textDescricao
             // 
             this.textDescricao.Location = new System.Drawing.Point(225, 105);
-            this.textDescricao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textDescricao.Margin = new System.Windows.Forms.Padding(2);
             this.textDescricao.Name = "textDescricao";
             this.textDescricao.Size = new System.Drawing.Size(193, 20);
             this.textDescricao.TabIndex = 7;
@@ -172,9 +174,9 @@
             // textNome
             // 
             this.textNome.Location = new System.Drawing.Point(81, 157);
-            this.textNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textNome.Margin = new System.Windows.Forms.Padding(2);
             this.textNome.Name = "textNome";
-            this.textNome.Size = new System.Drawing.Size(193, 20);
+            this.textNome.Size = new System.Drawing.Size(133, 20);
             this.textNome.TabIndex = 9;
             // 
             // labelAlbum
@@ -210,7 +212,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(22, 339);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(69, 25);
             this.button1.TabIndex = 20;
@@ -236,7 +238,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Location = new System.Drawing.Point(368, 324);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(74, 54);
             this.btnSalvar.TabIndex = 22;
@@ -248,7 +250,7 @@
             // 
             this.cbFormato.FormattingEnabled = true;
             this.cbFormato.Location = new System.Drawing.Point(81, 186);
-            this.cbFormato.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbFormato.Margin = new System.Windows.Forms.Padding(2);
             this.cbFormato.Name = "cbFormato";
             this.cbFormato.Size = new System.Drawing.Size(92, 21);
             this.cbFormato.TabIndex = 23;
@@ -267,7 +269,7 @@
             // textDuracao
             // 
             this.textDuracao.Location = new System.Drawing.Point(81, 216);
-            this.textDuracao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textDuracao.Margin = new System.Windows.Forms.Padding(2);
             this.textDuracao.Name = "textDuracao";
             this.textDuracao.Size = new System.Drawing.Size(92, 20);
             this.textDuracao.TabIndex = 25;
@@ -285,7 +287,7 @@
             // textMegaPixels
             // 
             this.textMegaPixels.Location = new System.Drawing.Point(81, 216);
-            this.textMegaPixels.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textMegaPixels.Margin = new System.Windows.Forms.Padding(2);
             this.textMegaPixels.Name = "textMegaPixels";
             this.textMegaPixels.Size = new System.Drawing.Size(76, 20);
             this.textMegaPixels.TabIndex = 27;
@@ -304,7 +306,7 @@
             // 
             this.cbIdioma.FormattingEnabled = true;
             this.cbIdioma.Location = new System.Drawing.Point(81, 216);
-            this.cbIdioma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbIdioma.Margin = new System.Windows.Forms.Padding(2);
             this.cbIdioma.Name = "cbIdioma";
             this.cbIdioma.Size = new System.Drawing.Size(92, 21);
             this.cbIdioma.TabIndex = 29;
@@ -313,7 +315,7 @@
             // 
             this.rbSim.AutoSize = true;
             this.rbSim.Location = new System.Drawing.Point(16, 34);
-            this.rbSim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbSim.Margin = new System.Windows.Forms.Padding(2);
             this.rbSim.Name = "rbSim";
             this.rbSim.Size = new System.Drawing.Size(42, 17);
             this.rbSim.TabIndex = 31;
@@ -325,7 +327,7 @@
             // 
             this.rbNao.AutoSize = true;
             this.rbNao.Location = new System.Drawing.Point(16, 64);
-            this.rbNao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbNao.Margin = new System.Windows.Forms.Padding(2);
             this.rbNao.Name = "rbNao";
             this.rbNao.Size = new System.Drawing.Size(45, 17);
             this.rbNao.TabIndex = 32;
@@ -346,7 +348,7 @@
             // textLocal
             // 
             this.textLocal.Location = new System.Drawing.Point(81, 186);
-            this.textLocal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textLocal.Margin = new System.Windows.Forms.Padding(2);
             this.textLocal.Name = "textLocal";
             this.textLocal.Size = new System.Drawing.Size(76, 20);
             this.textLocal.TabIndex = 34;
@@ -374,7 +376,7 @@
             // textTempo
             // 
             this.textTempo.Location = new System.Drawing.Point(81, 244);
-            this.textTempo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textTempo.Margin = new System.Windows.Forms.Padding(2);
             this.textTempo.Mask = "99";
             this.textTempo.Name = "textTempo";
             this.textTempo.Size = new System.Drawing.Size(68, 20);
@@ -383,7 +385,7 @@
             // textVolume
             // 
             this.textVolume.Location = new System.Drawing.Point(289, 189);
-            this.textVolume.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textVolume.Margin = new System.Windows.Forms.Padding(2);
             this.textVolume.Mask = "9";
             this.textVolume.Name = "textVolume";
             this.textVolume.Size = new System.Drawing.Size(87, 20);
@@ -404,7 +406,7 @@
             // textAlbum
             // 
             this.textAlbum.Location = new System.Drawing.Point(81, 244);
-            this.textAlbum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textAlbum.Margin = new System.Windows.Forms.Padding(2);
             this.textAlbum.Name = "textAlbum";
             this.textAlbum.Size = new System.Drawing.Size(92, 20);
             this.textAlbum.TabIndex = 40;
@@ -423,7 +425,7 @@
             // textArtista
             // 
             this.textArtista.Location = new System.Drawing.Point(81, 274);
-            this.textArtista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textArtista.Margin = new System.Windows.Forms.Padding(2);
             this.textArtista.Name = "textArtista";
             this.textArtista.Size = new System.Drawing.Size(92, 20);
             this.textArtista.TabIndex = 42;
@@ -464,11 +466,30 @@
             this.btnExcluirMidia.UseVisualStyleBackColor = true;
             this.btnExcluirMidia.Click += new System.EventHandler(this.btnExcluirMidia_Click);
             // 
+            // labelAno
+            // 
+            this.labelAno.AutoSize = true;
+            this.labelAno.Location = new System.Drawing.Point(223, 160);
+            this.labelAno.Name = "labelAno";
+            this.labelAno.Size = new System.Drawing.Size(103, 13);
+            this.labelAno.TabIndex = 47;
+            this.labelAno.Text = "Ano de Lançamento";
+            // 
+            // TextBoxAno
+            // 
+            this.TextBoxAno.Location = new System.Drawing.Point(332, 153);
+            this.TextBoxAno.Mask = "9999";
+            this.TextBoxAno.Name = "TextBoxAno";
+            this.TextBoxAno.Size = new System.Drawing.Size(100, 20);
+            this.TextBoxAno.TabIndex = 48;
+            // 
             // TelaCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(453, 505);
+            this.Controls.Add(this.TextBoxAno);
+            this.Controls.Add(this.labelAno);
             this.Controls.Add(this.btnExcluirMidia);
             this.Controls.Add(this.maskedTextExcluido);
             this.Controls.Add(this.label2);
@@ -508,7 +529,7 @@
             this.Controls.Add(this.radioMusica);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "TelaCadastro";
             this.Text = "Cadastro de Mídia";
@@ -562,5 +583,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MaskedTextBox maskedTextExcluido;
         private System.Windows.Forms.Button btnExcluirMidia;
+        private System.Windows.Forms.Label labelAno;
+        private System.Windows.Forms.MaskedTextBox TextBoxAno;
     }
 }

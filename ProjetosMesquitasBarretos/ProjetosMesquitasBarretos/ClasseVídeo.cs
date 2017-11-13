@@ -68,7 +68,7 @@ namespace ProjetosMesquitasBarretos
 
         public void Inclui(ClasseVídeo c)
         {
-            string dados = "Id" + "|" + c.Id.ToString() + "|" + "Descrição" + "|" + c.Descrição.ToString() + "|" + "Dados" + "|" + c.ArquivoDeDados + "|" + "Formato" + "|" + c.Fvideo + "|" + "Idioma" + "|" + c.Idiomaenum + "|" + "Legenda"+c.Possuilegenda + Environment.NewLine;
+            string dados = "Id" + "|" + c.Id.ToString() + "|" + "Descrição" + "|" + c.Descrição.ToString() + "|" + "Dados" + "|" + c.ArquivoDeDados + "|" + "Formato" + "|" + c.Fvideo + "|" + "Idioma" + "|" + c.Idiomaenum + "|" + "Legenda"+c.Possuilegenda +"Ano de Lançamento"+"|"+c.Anodelancamento+ Environment.NewLine;
             if (File.Exists("dados.txt"))
             {
                 File.AppendAllText("dados", dados);

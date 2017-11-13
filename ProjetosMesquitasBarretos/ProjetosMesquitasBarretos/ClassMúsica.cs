@@ -80,7 +80,7 @@ namespace ProjetosMesquitasBarretos
 
         public void IncluiMusica(ClassMusica m)
         {
-            string dados = "Id" + "|" + m.Id.ToString() + "|" + "Descrição" + "|" + m.Descrição.ToString() + "|" + "Dados" + "|" + m.ArquivoDeDados + "|" + "Formato" + "|" + m.Fmusica + "|" + "Duração" + "|" + m.Duracao.ToString() + "|" + "Volume" + "|" + m.Volume.ToString();
+            string dados = "Id" + "|" + m.Id.ToString() + "|" + "Descrição" + "|" + m.Descrição.ToString() + "|" + "Dados" + "|" + m.ArquivoDeDados + "|" + "Formato" + "|" + m.Fmusica + "|" + "Duração" + "|" + m.Duracao.ToString() + "|" + "Volume" + "|" + m.Volume.ToString()+"Ano de Lançamento"+"|"+m.Anodelancamento+Environment.NewLine;
            if(File.Exists("Mídia.txt"))
            {
                

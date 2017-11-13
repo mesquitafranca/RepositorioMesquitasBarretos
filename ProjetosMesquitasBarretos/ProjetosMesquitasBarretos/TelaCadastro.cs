@@ -170,6 +170,7 @@ namespace ProjetosMesquitasBarretos
                     musica.Fmusica = (FormatoEnummusica)cbFormato.SelectedItem;
                     musica.Duracao = Convert.ToDouble(textDuracao.Text);
                     musica.Volume = Convert.ToInt32(textVolume.Text);
+                    musica.Anodelancamento = Convert.ToInt32(TextBoxAno.Text);
                     musica.IncluiMusica(musica);
                 }
                 catch(Exception erro)
@@ -188,6 +189,7 @@ namespace ProjetosMesquitasBarretos
                     video.Descrição = textDescricao.Text;
                     video.ArquivoDeDados = "dados.txt";
                     video.Fvideo = (FormatoEnumVideo)cbFormato.SelectedItem;
+                    video.Anodelancamento = Convert.ToInt32(TextBoxAno.Text);
                     if (rbSim.Checked)
                         video.Possuilegenda = true;
                     else
@@ -211,6 +213,7 @@ namespace ProjetosMesquitasBarretos
                     foto.Local = textLocal.Text;
                     foto.MegaPixels = Convert.ToDouble(textMegaPixels.Text);
                     foto.TempoEmSegundosParaExibir = Convert.ToInt32(textTempo.Text);
+                    foto.Anodelancamento = Convert.ToInt32(TextBoxAno.Text);
                     foto.Inclui(foto);
                 }
                 catch(Exception erro)

@@ -8,7 +8,7 @@ using System.IO;
 
 namespace ProjetosMesquitasBarretos
 {
-   public abstract class ClasseMidia
+   public abstract class ClasseMidia: ICatalogo
     {
         int id; //Identificação da música
         string descrição; //Comentários Gerais sobre a música
@@ -55,6 +55,19 @@ namespace ProjetosMesquitasBarretos
                 if (String.IsNullOrEmpty(value))
                     throw new Exception("Digite um caminho correto !!!");
                 arquivoDeDados = value;
+            }
+        }
+
+        public int Anodelancamento
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
             }
         }
 
