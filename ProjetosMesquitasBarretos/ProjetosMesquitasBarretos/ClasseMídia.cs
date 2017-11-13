@@ -89,7 +89,12 @@ namespace ProjetosMesquitasBarretos
                        {
                            if (t == arquivo.Length - 1)
                            {
-                               File.WriteAllLines("Mídia.txt", arquivo);
+                               string[] aux = new string[arquivo.Length - 1];
+                               for (int p = 0; p < arquivo.Length-1;p++ )
+                               {
+                                   aux[p] = arquivo[p];
+                               }
+                                   File.WriteAllLines("Mídia.txt", aux);
                                return;
                            }
                            else
