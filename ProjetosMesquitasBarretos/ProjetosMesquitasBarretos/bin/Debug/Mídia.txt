@@ -1,2 +1,1 @@
-Id|85|Nome|kzergp|Descrição|asdfsdfsdfs|Dados|C:\Users\Public\Music\Sample Music\Maid with the Flaxen Hair.mp3|Formato|mp3|Duração|9888|Volume|4|Ano de Lançamento|7984
 Id|74|Nome|fhfghfg|Descrição|hgzhfgh|Dados|C:\Users\Public\Music\Sample Music\Maid with the Flaxen Hair.mp3|Formato|mp3|Duração|4536|Volume|4|Ano de Lançamento|7574
