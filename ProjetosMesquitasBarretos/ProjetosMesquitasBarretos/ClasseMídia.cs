@@ -8,11 +8,27 @@ using System.IO;
 
 namespace ProjetosMesquitasBarretos
 {
-   public abstract class ClasseMidia: ICatalogo
+    public abstract class ClasseMidia : ICatalogo
     {
         int id; //Identificação da música
         string descrição; //Comentários Gerais sobre a música
         string arquivoDeDados;  //local e nome do arquivo de dados(onde as mídias serão armazenadas)
+        int anoLancamento;
+        string nome;
+        public string Nome
+        {
+            get
+            {
+                return nome;
+            }
+
+            set
+            {
+                if (String.IsNullOrEmpty(value))
+                    throw new Exception("Digite um nome válido !!!");
+                nome = value;
+            }
+        }
 
         public int Id
         {
@@ -37,7 +53,7 @@ namespace ProjetosMesquitasBarretos
             set
             {
                 if (String.IsNullOrEmpty(value))
-                    throw new Exception("Digite uma descrição válido !!!");
+                    throw new Exception("Digite uma descrição válida !!!");
                 descrição = value;
             }
         }
@@ -62,12 +78,12 @@ namespace ProjetosMesquitasBarretos
         {
             get
             {
-                throw new NotImplementedException();
+                return anoLancamento;
             }
 
             set
             {
-                throw new NotImplementedException();
+                anoLancamento = value;
             }
         }
 
@@ -80,7 +96,7 @@ namespace ProjetosMesquitasBarretos
                 {
                     string[] dados = arquivo[i].Split('|');
                     if (m.Id == Convert.ToInt32(dados[1]))
-                        throw new Exception("Este Id já foi cadastrado !!!");
+                        throw new Exception("Este ID já foi cadastrado !!!");
                 }
             }
             else

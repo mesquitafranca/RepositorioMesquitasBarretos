@@ -270,6 +270,7 @@
             // 
             this.textDuracao.Location = new System.Drawing.Point(81, 216);
             this.textDuracao.Margin = new System.Windows.Forms.Padding(2);
+            this.textDuracao.Mask = "9999";
             this.textDuracao.Name = "textDuracao";
             this.textDuracao.Size = new System.Drawing.Size(92, 20);
             this.textDuracao.TabIndex = 25;

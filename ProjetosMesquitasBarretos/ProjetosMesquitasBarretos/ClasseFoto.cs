@@ -57,7 +57,7 @@ namespace ProjetosMesquitasBarretos
 
        public void Inclui(ClasseFoto c)
         {
-            string conteudo = "Id" + "|" + c.Id.ToString() + "|" + "Descrição" + "|" + c.Descrição.ToString() + "|" + "Dados" + "|" + c.ArquivoDeDados + "Local" + "|" + c.Local + "|" + "MegaPixels" + "|" + c.MegaPixels + "|" + "Tempo" + "|" + c.TempoEmSegundosParaExibir +"Ano de Lançamento"+"|"+c.Anodelancamento+ Environment.NewLine;
+            string conteudo = "Id" + "|" + c.Id.ToString() + "|"+"Nome"+"|"+c.Nome+"|" + "Descrição" + "|" + c.Descrição.ToString() + "|" + "Dados" + "|" + c.ArquivoDeDados + "Local" + "|" + c.Local + "|" + "MegaPixels" + "|" + c.MegaPixels + "|" + "Tempo" + "|" + c.TempoEmSegundosParaExibir +"Ano de Lançamento"+"|"+c.Anodelancamento+ Environment.NewLine;
             if (File.Exists("dados.txt"))
             {
                 File.AppendAllText("dados.txt", conteudo);

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace ProjetosMesquitasBarretos
 {
@@ -15,11 +16,26 @@ namespace ProjetosMesquitasBarretos
         public Tela1()
         {
             InitializeComponent();
-            
-            
+           
+
+
         }
 
-       
+       public void lerTxt ()
+        {
+            string[] dados = File.ReadAllLines("Mídia.txt");
+            string aux = "";
+            
+            for(int i =0;i<dados.Length;i++)
+            {
+                string[] informacao = dados[i].Split('|');
+                aux = aux + informacao[1];
+            }
+            foreach (string d in dados)
+            {
+                listBox1.Items.Add(d);
+            }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -66,6 +82,20 @@ namespace ProjetosMesquitasBarretos
         private void novaPlaylistToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+           
+        }
+
+        private void btnEscolherMidia_Click(object sender, EventArgs e)
+        {
         }
     }
 }

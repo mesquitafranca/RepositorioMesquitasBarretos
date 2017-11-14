@@ -165,8 +165,10 @@ namespace ProjetosMesquitasBarretos
                 {
                     ClassMusica musica = new ClassMusica();
                     musica.Id = Convert.ToInt32(textId.Text);
+                    musica.VerificaId(musica);
                     musica.Descrição = textDescricao.Text;
-                    musica.ArquivoDeDados = "dados.txt";
+                    musica.ArquivoDeDados = labelLink.Text;
+                    musica.Nome = textNome.Text;
                     musica.Fmusica = (FormatoEnummusica)cbFormato.SelectedItem;
                     musica.Duracao = Convert.ToDouble(textDuracao.Text);
                     musica.Volume = Convert.ToInt32(textVolume.Text);
@@ -186,8 +188,9 @@ namespace ProjetosMesquitasBarretos
                 {
                     ClasseVídeo video = new ClasseVídeo();
                     video.Id = Convert.ToInt32(textId.Text);
+                    video.VerificaId(video);
                     video.Descrição = textDescricao.Text;
-                    video.ArquivoDeDados = "dados.txt";
+                    video.ArquivoDeDados = labelLink.Text;
                     video.Fvideo = (FormatoEnumVideo)cbFormato.SelectedItem;
                     video.Anodelancamento = Convert.ToInt32(TextBoxAno.Text);
                     if (rbSim.Checked)
@@ -208,8 +211,9 @@ namespace ProjetosMesquitasBarretos
                 {
                     ClasseFoto foto = new ClasseFoto();
                     foto.Id = Convert.ToInt32(textId.Text);
+                    foto.VerificaId(foto);
                     foto.Descrição = textDescricao.Text;
-                    foto.ArquivoDeDados = "dados.txt";
+                    foto.ArquivoDeDados = labelLink.Text;
                     foto.Local = textLocal.Text;
                     foto.MegaPixels = Convert.ToDouble(textMegaPixels.Text);
                     foto.TempoEmSegundosParaExibir = Convert.ToInt32(textTempo.Text);
@@ -221,7 +225,9 @@ namespace ProjetosMesquitasBarretos
                     MessageBox.Show(erro.Message);
                 }
             }
-            
+
+            MessageBox.Show("Mídia salva com sucesso!");
+            apagarCampos();
             
         }
 

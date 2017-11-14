@@ -43,14 +43,14 @@
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnEscolherMidia = new System.Windows.Forms.Button();
             this.fotoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEscolherMidia = new System.Windows.Forms.Button();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ordemAlfabéticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.álbunsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.artistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playlistsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEscolherMusica = new System.Windows.Forms.Button();
-            this.ordemAlfabéticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -115,7 +115,7 @@
             // 
             this.panel1.Controls.Add(this.axWindowsMediaPlayer1);
             this.panel1.Location = new System.Drawing.Point(8, 25);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(689, 385);
             this.panel1.TabIndex = 2;
@@ -135,10 +135,11 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(703, 265);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(130, 134);
+            this.listBox1.Size = new System.Drawing.Size(126, 134);
             this.listBox1.TabIndex = 9;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // contextMenuStrip1
             // 
@@ -150,6 +151,7 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.contextMenuStrip1.Size = new System.Drawing.Size(162, 92);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // aToolStripMenuItem
             // 
@@ -169,21 +171,22 @@
             this.cToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.cToolStripMenuItem.Text = "Vídeo";
             // 
-            // btnEscolherMidia
-            // 
-            this.btnEscolherMidia.ContextMenuStrip = this.contextMenuStrip1;
-            this.btnEscolherMidia.Location = new System.Drawing.Point(703, 36);
-            this.btnEscolherMidia.Name = "btnEscolherMidia";
-            this.btnEscolherMidia.Size = new System.Drawing.Size(103, 23);
-            this.btnEscolherMidia.TabIndex = 13;
-            this.btnEscolherMidia.Text = "Todas as Mídias";
-            this.btnEscolherMidia.UseVisualStyleBackColor = true;
-            // 
             // fotoToolStripMenuItem
             // 
             this.fotoToolStripMenuItem.Name = "fotoToolStripMenuItem";
             this.fotoToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.fotoToolStripMenuItem.Text = "Foto";
+            // 
+            // btnEscolherMidia
+            // 
+            this.btnEscolherMidia.ContextMenuStrip = this.contextMenuStrip1;
+            this.btnEscolherMidia.Location = new System.Drawing.Point(703, 36);
+            this.btnEscolherMidia.Name = "btnEscolherMidia";
+            this.btnEscolherMidia.Size = new System.Drawing.Size(126, 23);
+            this.btnEscolherMidia.TabIndex = 13;
+            this.btnEscolherMidia.Text = "Todas as Mídias";
+            this.btnEscolherMidia.UseVisualStyleBackColor = true;
+            this.btnEscolherMidia.Click += new System.EventHandler(this.btnEscolherMidia_Click);
             // 
             // contextMenuStrip2
             // 
@@ -194,6 +197,12 @@
             this.playlistsToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(168, 92);
+            // 
+            // ordemAlfabéticaToolStripMenuItem
+            // 
+            this.ordemAlfabéticaToolStripMenuItem.Name = "ordemAlfabéticaToolStripMenuItem";
+            this.ordemAlfabéticaToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.ordemAlfabéticaToolStripMenuItem.Text = "Ordem Alfabética";
             // 
             // álbunsToolStripMenuItem
             // 
@@ -216,18 +225,12 @@
             // btnEscolherMusica
             // 
             this.btnEscolherMusica.ContextMenuStrip = this.contextMenuStrip2;
-            this.btnEscolherMusica.Location = new System.Drawing.Point(703, 87);
+            this.btnEscolherMusica.Location = new System.Drawing.Point(702, 65);
             this.btnEscolherMusica.Name = "btnEscolherMusica";
-            this.btnEscolherMusica.Size = new System.Drawing.Size(103, 23);
+            this.btnEscolherMusica.Size = new System.Drawing.Size(127, 23);
             this.btnEscolherMusica.TabIndex = 15;
-            this.btnEscolherMusica.Text = "button2";
+            this.btnEscolherMusica.Text = "Ordem Alfabética";
             this.btnEscolherMusica.UseVisualStyleBackColor = true;
-            // 
-            // ordemAlfabéticaToolStripMenuItem
-            // 
-            this.ordemAlfabéticaToolStripMenuItem.Name = "ordemAlfabéticaToolStripMenuItem";
-            this.ordemAlfabéticaToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.ordemAlfabéticaToolStripMenuItem.Text = "Ordem Alfabética";
             // 
             // Tela1
             // 
