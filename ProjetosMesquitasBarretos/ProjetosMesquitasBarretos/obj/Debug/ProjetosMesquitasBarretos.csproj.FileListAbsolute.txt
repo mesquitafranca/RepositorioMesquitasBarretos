@@ -126,3 +126,9 @@ C:\Users\082160013\Desktop\Trabalho V6\ProjetosMesquitasBarretos\ProjetosMesquit
 C:\Users\082160013\Desktop\Trabalho V6\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.TelaCadastro.resources
 C:\Users\082160013\Desktop\Trabalho V6\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.TelaSobre.resources
 C:\Users\082160013\Desktop\Trabalho V6\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.csproj.GenerateResource.Cache
+C:\Users\Bruno\Desktop\Nova pasta (2)\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\bin\Debug\ProjetosMesquitasBarretos.exe.config
+C:\Users\Bruno\Desktop\Nova pasta (2)\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\Interop.WMPLib.dll
+C:\Users\Bruno\Desktop\Nova pasta (2)\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Bruno\Desktop\Nova pasta (2)\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.csproj.ResolveComReference.cache
+C:\Users\Bruno\Desktop\Nova pasta (2)\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.exe
+C:\Users\Bruno\Desktop\Nova pasta (2)\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\obj\Debug\ProjetosMesquitasBarretos.pdb

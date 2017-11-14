@@ -174,6 +174,7 @@ namespace ProjetosMesquitasBarretos
                     musica.Volume = Convert.ToInt32(textVolume.Text);
                     musica.Anodelancamento = Convert.ToInt32(TextBoxAno.Text);
                     musica.IncluiMusica(musica);
+                    MessageBox.Show("Mídia salva com sucesso!");
                 }
                 catch(Exception erro)
                 {
@@ -198,6 +199,7 @@ namespace ProjetosMesquitasBarretos
                     else
                         video.Possuilegenda = false;
                     video.Inclui(video);
+                    MessageBox.Show("Mídia salva com sucesso!");
                 }
                 catch(Exception erro)
                 {
@@ -219,6 +221,7 @@ namespace ProjetosMesquitasBarretos
                     foto.TempoEmSegundosParaExibir = Convert.ToInt32(textTempo.Text);
                     foto.Anodelancamento = Convert.ToInt32(TextBoxAno.Text);
                     foto.Inclui(foto);
+                    MessageBox.Show("Mídia salva com sucesso!");
                 }
                 catch(Exception erro)
                 {
@@ -226,7 +229,7 @@ namespace ProjetosMesquitasBarretos
                 }
             }
 
-            MessageBox.Show("Mídia salva com sucesso!");
+            
             apagarCampos();
             
         }

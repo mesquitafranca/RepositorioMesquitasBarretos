@@ -1,1 +1,4 @@
-Id|74|Nome|fhfghfg|Descrição|hgzhfgh|Dados|C:\Users\Public\Music\Sample Music\Maid with the Flaxen Hair.mp3|Formato|mp3|Duração|4536|Volume|4|Ano de Lançamento|7574
+﻿Id|74|Nome|fhfghfg|Descrição|hgzhfgh|Dados|C:\Users\Public\Music\Sample Music\Maid with the Flaxen Hair.mp3|Formato|mp3|Duração|4536|Volume|4|Ano de Lançamento|7574
+Id|2|Nome|Três|Descrição|Metal|Dados|C:\Users\Bruno\Downloads\Lacuna Coil - Delirium (2016)\08 Ghost in the Midst.mp3|Formato|mp3|Duração|120|Volume|9|Ano de Lançamento|2017|Música
+Id|3|Nome|Descrição|fota1|Dados|C:\Users\Bruno\Downloads\Lacuna Coil - Delirium (2016)\original.jpgLocal|deserto|MegaPixels|500|Tempo|5Ano de Lançamento|2017|Foto
+Id|4|Nome|Descrição|vidao|Dados|C:\Users\Bruno\Downloads\Lacuna Coil - Delirium (2016)\05 Downfall.mp3|Formato|AVI|Idioma|Inglês|LegendaFalseAno de Lançamento|2017|Vídeo

@@ -97,5 +97,71 @@ namespace ProjetosMesquitasBarretos
         private void btnEscolherMidia_Click(object sender, EventArgs e)
         {
         }
+
+        private void aToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lerTxt();
+            
+        }
+
+        private void bToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string[] arquivotexto = File.ReadAllLines("Mídia.txt");
+            bool encontramusica = false;
+            for(int i = 0;i<arquivotexto.Length;i++)
+            {
+                string[] conteudo = arquivotexto[i].Split('|');
+                for (int p = 0; p < conteudo.Length; p++)
+                {
+                    if (conteudo[p] == "Música")
+                    {
+                        encontramusica = true;
+                        listBox1.Items.Add(arquivotexto[i]);
+                    }
+                }
+            }
+            if (encontramusica == false)
+                MessageBox.Show("Não há músicas cadastradas!!!");
+        }
+
+        private void cToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string[] arquivotexto = File.ReadAllLines("Mídia.txt");
+            bool encontramusica = false;
+            for (int i = 0; i < arquivotexto.Length; i++)
+            {
+                string[] conteudo = arquivotexto[i].Split('|');
+                for (int p = 0; p < conteudo.Length; p++)
+                {
+                    if (conteudo[p] == "Vídeo")
+                    {
+                        encontramusica = true;
+                        listBox1.Items.Add(arquivotexto[i]);
+                    }
+                }
+            }
+            if (encontramusica == false)
+                MessageBox.Show("Não há vídeos cadastrados!!!");
+        }
+
+        private void fotoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string[] arquivotexto = File.ReadAllLines("Mídia.txt");
+            bool encontramusica = false;
+            for (int i = 0; i < arquivotexto.Length; i++)
+            {
+                string[] conteudo = arquivotexto[i].Split('|');
+                for (int p = 0; p < conteudo.Length; p++)
+                {
+                    if (conteudo[p] == "Foto")
+                    {
+                        encontramusica = true;
+                        listBox1.Items.Add(arquivotexto[i]);
+                    }
+                }
+            }
+            if (encontramusica == false)
+                MessageBox.Show("Não há fotos cadastradas!!!");
+        }
     }
 }

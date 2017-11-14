@@ -68,13 +68,13 @@ namespace ProjetosMesquitasBarretos
 
         public void Inclui(ClasseVídeo c)
         {
-            string dados = "Id" + "|" + c.Id.ToString() + "|"+"Nome"+"|"+c.Nome+"|" + "Descrição" + "|" + c.Descrição.ToString() + "|" + "Dados" + "|" + c.ArquivoDeDados + "|" + "Formato" + "|" + c.Fvideo + "|" + "Idioma" + "|" + c.Idiomaenum + "|" + "Legenda"+c.Possuilegenda +"Ano de Lançamento"+"|"+c.Anodelancamento+ Environment.NewLine;
-            if (File.Exists("dados.txt"))
+            string dados = "Id" + "|" + c.Id.ToString() + "|"+"Nome"+"|"+c.Nome+"|" + "Descrição" + "|" + c.Descrição.ToString() + "|" + "Dados" + "|" + c.ArquivoDeDados + "|" + "Formato" + "|" + c.Fvideo + "|" + "Idioma" + "|" + c.Idiomaenum + "|" + "Legenda"+c.Possuilegenda +"Ano de Lançamento"+"|"+c.Anodelancamento+"|"+"Vídeo"+ Environment.NewLine;
+            if (File.Exists("Mídia.txt"))
             {
-                File.AppendAllText("dados", dados);
+                File.AppendAllText("Mídia.txt", dados);
             }
             else
-                File.WriteAllText("dados", dados);
+                File.WriteAllText("Mídia.txt", dados);
         }
 
         
