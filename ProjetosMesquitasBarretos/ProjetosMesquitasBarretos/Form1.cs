@@ -24,17 +24,19 @@ namespace ProjetosMesquitasBarretos
        public void lerTxt ()
         {
             string[] dados = File.ReadAllLines("Mídia.txt");
-            string aux = "";
-            
             for(int i =0;i<dados.Length;i++)
             {
+                string aux =  "";
                 string[] informacao = dados[i].Split('|');
-                aux = aux + informacao[1];
+                for (int p = 0; p < informacao.Length;p++ )
+                {
+                    if (informacao[p] == "Música" || informacao[p] == "Vídeo" || informacao[p] == "Foto")
+                        aux = informacao[p];
+                }
+                    listBox1.Items.Add("ID-" + informacao[1]+"-"+aux);
+                
             }
-            foreach (string d in dados)
-            {
-                listBox1.Items.Add(d);
-            }
+           
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -103,7 +105,59 @@ namespace ProjetosMesquitasBarretos
             lerTxt();
             
         }
+        private void PreencheObjeto(string[] arquivotexto)
+        {
+          string[] dados = File.ReadAllLines("Mídia.txt");
+          for (int i = 0; i < dados.Length; i++)
+          {
+              string aux = "";
+              string[] informacao = dados[i].Split('|');
+              for (int p = 0; p < informacao.Length; p++)
+              {
+                  if (informacao[p] == "Música" || informacao[p] == "Vídeo" || informacao[p] == "Foto")
+                      aux = informacao[p];
+                  if (aux == "Música")
+                  {
+                      musica.Id = Convert.ToInt16(informacao[1]);
+                      musica.Nome = informacao[3];
+                      musica.Descrição = informacao[5];
+                      musica.ArquivoDeDados = informacao[7];
+                      musica.Fmusica = (FormatoEnummusica)Enum.Parse(typeof(FormatoEnummusica), informacao[9]);
+                      musica.Duracao = Convert.ToDouble(informacao[11]);
+                      musica.Volume = Convert.ToInt16(informacao[13]);
+                      musica.Anodelancamento = Convert.ToInt32(informacao[15]);
+                  }
 
+                  else if (aux == "Vídeo")
+                  {
+                      video.Id = Convert.ToInt16(informacao[1]);
+                      video.Nome = informacao[3];
+                      video.Descrição = informacao[5];
+                      video.ArquivoDeDados = informacao[7];
+                      video.Fvideo = (FormatoEnumVideo)Enum.Parse(typeof(FormatoEnumVideo), informacao[9]);
+                      video.Idiomaenum = (IdiomaEnum)Enum.Parse(typeof(IdiomaEnum),(informacao[11]));
+                      video.Possuilegenda = Convert.ToBoolean(informacao[13]);
+                      video.Anodelancamento = Convert.ToInt32(informacao[15]);
+                  }
+                  else if (aux == "Foto")
+                  {
+                      foto.Id = Convert.ToInt16(informacao[1]);
+                      foto.Nome = informacao[3];
+                      foto.Descrição = informacao[5];
+                      foto.ArquivoDeDados = informacao[7];
+                      foto.Local= informacao[9];
+                      foto.MegaPixels = Convert.ToDouble(informacao[11]);
+                      foto.TempoEmSegundosParaExibir = Convert.ToInt16(informacao[13]);
+                      foto.Anodelancamento = Convert.ToInt32(informacao[15]);
+                  }
+                  
+              }
+          }
+        }
+        Pilha minhapilha;
+        ClassMusica musica;
+        ClasseVídeo video;
+        ClasseFoto foto;
         private void bToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string[] arquivotexto = File.ReadAllLines("Mídia.txt");
@@ -115,8 +169,19 @@ namespace ProjetosMesquitasBarretos
                 {
                     if (conteudo[p] == "Música")
                     {
+                        
                         encontramusica = true;
-                        listBox1.Items.Add(arquivotexto[i]);
+                        listBox1.Items.Add("ID-"+conteudo[1]+"-"+conteudo[p]);
+                        musica.Id = Convert.ToInt16(conteudo[1]);
+                        musica.Nome = conteudo[3];
+                        musica.Descrição = conteudo[5];
+                        musica.ArquivoDeDados = conteudo[7];
+                        musica.Fmusica = (FormatoEnummusica)Enum.Parse(typeof(FormatoEnummusica), conteudo[9]);
+                        musica.Duracao = Convert.ToDouble(conteudo[11]);
+                        musica.Volume = Convert.ToInt16(conteudo[13]);
+                        musica.Anodelancamento = Convert.ToInt32(conteudo[15]);
+                        minhapilha.Empilhar(musica);
+                        
                     }
                 }
             }
@@ -136,7 +201,16 @@ namespace ProjetosMesquitasBarretos
                     if (conteudo[p] == "Vídeo")
                     {
                         encontramusica = true;
-                        listBox1.Items.Add(arquivotexto[i]);
+                        listBox1.Items.Add("ID-"+conteudo[1]+"-"+conteudo[p]);
+                        video.Id = Convert.ToInt16(conteudo[1]);
+                        video.Nome = conteudo[3];
+                        video.Descrição = conteudo[5];
+                        video.ArquivoDeDados = conteudo[7];
+                        video.Fvideo = (FormatoEnumVideo)Enum.Parse(typeof(FormatoEnumVideo), conteudo[9]);
+                        video.Idiomaenum = (IdiomaEnum)Enum.Parse(typeof(IdiomaEnum), (conteudo[11]));
+                        video.Possuilegenda = Convert.ToBoolean(conteudo[13]);
+                        video.Anodelancamento = Convert.ToInt32(conteudo[15]);
+                        minhapilha.Empilhar(video);
                     }
                 }
             }
@@ -156,7 +230,16 @@ namespace ProjetosMesquitasBarretos
                     if (conteudo[p] == "Foto")
                     {
                         encontramusica = true;
-                        listBox1.Items.Add(arquivotexto[i]);
+                        listBox1.Items.Add("ID-"+conteudo[1]+"-"+conteudo[p]);
+                        foto.Id = Convert.ToInt16(conteudo[1]);
+                        foto.Nome = conteudo[3];
+                        foto.Descrição = conteudo[5];
+                        foto.ArquivoDeDados = conteudo[7];
+                        foto.Local = conteudo[9];
+                        foto.MegaPixels = Convert.ToDouble(conteudo[11]);
+                        foto.TempoEmSegundosParaExibir = Convert.ToInt16(conteudo[13]);
+                        foto.Anodelancamento = Convert.ToInt32(conteudo[15]);
+                        minhapilha.Empilhar(foto);
                     }
                 }
             }
