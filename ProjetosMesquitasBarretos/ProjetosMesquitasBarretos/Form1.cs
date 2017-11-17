@@ -121,7 +121,7 @@ namespace ProjetosMesquitasBarretos
                     }
 
                 }
-                    if (aux == "Música" && verificamidia == 3 || verificamidia == -1)
+                    if (aux == "Música" && verificamidia == 3 || aux == "Música"&& verificamidia == -1)
                     {
                         musica = new ClassMusica();
                         musica.Id = Convert.ToInt16(informacao[1]);
@@ -136,7 +136,7 @@ namespace ProjetosMesquitasBarretos
                         
                     }
 
-                    else if (aux == "Vídeo" && verificamidia == 1 || verificamidia == -1)
+                    else if (aux == "Vídeo" && verificamidia == 1 || aux == "Vídeo" && verificamidia == -1)
                     {
                         video = new ClasseVídeo();
                         video.Id = Convert.ToInt16(informacao[1]);
@@ -150,7 +150,7 @@ namespace ProjetosMesquitasBarretos
                         listBox1.Items.Add("ID:" + informacao[1] + "-Nome:" + informacao[3] + "-Mídia:Vídeo" + "\n");
                         
                     }
-                    else if (aux == "Foto" && verificamidia == 2 || verificamidia == -1)
+                    else if (aux == "Foto" && verificamidia == 2 || aux == "Foto" && verificamidia == -1)
                     {
                         foto = new ClasseFoto();
                         foto.Id = Convert.ToInt16(informacao[1]);
