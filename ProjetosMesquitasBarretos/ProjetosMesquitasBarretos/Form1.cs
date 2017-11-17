@@ -108,7 +108,6 @@ namespace ProjetosMesquitasBarretos
         }
         private void PreencheObjeto(string[] arquivotexto, int verificamidia)
         {
-            minhapilha = new Pilha();
             for (int i = 0; i < arquivotexto.Length; i++)
             {
                 string aux = "";
@@ -241,25 +240,23 @@ namespace ProjetosMesquitasBarretos
         private int[] ProcuraPorAno(int anopesquisado)
         {
             string[] dados = File.ReadAllLines("Mídia.txt");
+            int[] ano = new int [dados.Length];
             int[] linhasdesejadas = new int[dados.Length];
-            int contador = 0;
-            for (int i = 0; i < dados.Length; i++)
+            for (int p = 0; p < dados.Length;p++ )
             {
-                int ano = 0;
-                string[] informacao = dados[i].Split('|');
-                for (int p = 0; p < informacao.Length; p++)
-                {
-                    if (informacao[p] == "Ano de Lançamento" && Convert.ToInt32(informacao[p + 1]) == anopesquisado)
-                    {
-                        ano = Convert.ToInt32(informacao[p + 1]);
-                        linhasdesejadas[contador] = i;
-                        contador++;
-                    }
-                }
-
-
+                string[] aux = dados[p].Split('|');
+                ano[p] = Convert.ToInt32(aux[15]);
             }
-            return linhasdesejadas;
+            for (int i = 0; i < ano.Length;i++ )
+            {
+                if(ano[i] == anopesquisado)
+                    linhasdesejadas[i] = i;
+            }
+
+
+
+
+                return linhasdesejadas;
         }
 
         private string[] OrdemAlfabética()

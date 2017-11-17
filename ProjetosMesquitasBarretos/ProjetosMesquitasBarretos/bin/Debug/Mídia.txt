@@ -1,2 +1,4 @@
 Id|2|Nome|Três|Descrição|Metal|Dados|C:\Users\Bruno\Downloads\Lacuna Coil - Delirium (2016)\08 Ghost in the Midst.mp3|Formato|mp3|Duração|120|Volume|9|Ano de Lançamento|2017|Música
 Id|3|Nome|Anônimo|Descrição|metal|Dados|C:\Users\Bruno\Downloads\Lacuna Coil - Delirium (2016)\03 Delirium.mp3|Formato|mp3|Duração|150|Volume|9|Ano de Lançamento|2017|Música
+Id|10|Nome|cara sua|Descrição|vidiu|Dados|C:\Users\Bruno\Downloads\Lacuna Coil - Delirium (2016)\07 You Love Me 'Cause I Hate You.mp3|Formato|AVI|Idioma|Inglês|Legenda|False|Ano de Lançamento|2017|Vídeo
+Id|11|Nome|pablera|Descrição|fotinho|Dados|C:\Users\Bruno\Downloads\Lacuna Coil - Delirium (2016)\original.jpg|Local|deserto|MegaPixels|600|Tempo|5|Ano de Lançamento|2017|Foto
