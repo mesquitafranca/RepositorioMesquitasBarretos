@@ -13,6 +13,9 @@ namespace ProjetosMesquitasBarretos
         string local; //local onde a foto foi tirada
         double megaPixels;
         int tempoEmSegundosParaExibir; //tempo em segundos que a foto será exibida no player
+        string nome;
+
+       
 
         public string Local
         {
@@ -57,7 +60,7 @@ namespace ProjetosMesquitasBarretos
 
        public void Inclui(ClasseFoto c)
         {
-            string conteudo = "Id" + "|" + c.Id.ToString() + "|" + "Nome" + "|" + c.Nome + "|" + "Descrição" + "|" + c.Descrição.ToString() + "|" + "Dados" + "|" + c.ArquivoDeDados + "Local" + "|" + c.Local + "|" + "MegaPixels" + "|" + c.MegaPixels + "|" + "Tempo" + "|" + c.TempoEmSegundosParaExibir + "Ano de Lançamento" + "|" + c.Anodelancamento + "|"+"Foto" + Environment.NewLine;
+            string conteudo = "Id" + "|" + c.Id.ToString()+ "|" + "Nome" + "|" + c.Nome.ToString()+ "|" + "Descrição" + "|" + c.Descrição+ "|" + "Dados" + "|" + c.ArquivoDeDados + "Local" + "|" + c.Local + "|" + "MegaPixels" + "|" + c.MegaPixels.ToString() + "|" + "Tempo" + "|" + c.TempoEmSegundosParaExibir.ToString() + "Ano de Lançamento" + "|" + c.Anodelancamento.ToString() + "|"+"Foto" + Environment.NewLine;
             if (File.Exists("Mídia.txt"))
             {
                 File.AppendAllText("Mídia.txt", conteudo);

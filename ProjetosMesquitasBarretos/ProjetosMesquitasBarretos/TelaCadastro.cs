@@ -194,6 +194,7 @@ namespace ProjetosMesquitasBarretos
                     video.ArquivoDeDados = labelLink.Text;
                     video.Fvideo = (FormatoEnumVideo)cbFormato.SelectedItem;
                     video.Anodelancamento = Convert.ToInt32(TextBoxAno.Text);
+                    video.Nome = textNome.Text;
                     if (rbSim.Checked)
                         video.Possuilegenda = true;
                     else
@@ -220,6 +221,7 @@ namespace ProjetosMesquitasBarretos
                     foto.MegaPixels = Convert.ToDouble(textMegaPixels.Text);
                     foto.TempoEmSegundosParaExibir = Convert.ToInt32(textTempo.Text);
                     foto.Anodelancamento = Convert.ToInt32(TextBoxAno.Text);
+                    foto.Nome = textNome.Text;
                     foto.Inclui(foto);
                     MessageBox.Show("Mídia salva com sucesso!");
                 }

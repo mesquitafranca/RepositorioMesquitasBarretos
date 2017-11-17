@@ -51,6 +51,10 @@
             this.artistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playlistsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEscolherMusica = new System.Windows.Forms.Button();
+            this.anoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textanopesq = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -106,7 +110,7 @@
             this.axWindowsMediaPlayer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.axWindowsMediaPlayer1.Enabled = true;
             this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 0);
-            this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(4);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(919, 474);
@@ -150,10 +154,11 @@
             this.aToolStripMenuItem,
             this.bToolStripMenuItem,
             this.cToolStripMenuItem,
-            this.fotoToolStripMenuItem});
+            this.fotoToolStripMenuItem,
+            this.anoToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(188, 128);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(188, 124);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // aToolStripMenuItem
@@ -188,7 +193,7 @@
             // 
             this.btnEscolherMidia.ContextMenuStrip = this.contextMenuStrip1;
             this.btnEscolherMidia.Location = new System.Drawing.Point(937, 44);
-            this.btnEscolherMidia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEscolherMidia.Margin = new System.Windows.Forms.Padding(4);
             this.btnEscolherMidia.Name = "btnEscolherMidia";
             this.btnEscolherMidia.Size = new System.Drawing.Size(168, 28);
             this.btnEscolherMidia.TabIndex = 13;
@@ -235,18 +240,58 @@
             // 
             this.btnEscolherMusica.ContextMenuStrip = this.contextMenuStrip2;
             this.btnEscolherMusica.Location = new System.Drawing.Point(936, 80);
-            this.btnEscolherMusica.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEscolherMusica.Margin = new System.Windows.Forms.Padding(4);
             this.btnEscolherMusica.Name = "btnEscolherMusica";
             this.btnEscolherMusica.Size = new System.Drawing.Size(169, 28);
             this.btnEscolherMusica.TabIndex = 15;
             this.btnEscolherMusica.Text = "Ordem Alfabética";
             this.btnEscolherMusica.UseVisualStyleBackColor = true;
+            this.btnEscolherMusica.Click += new System.EventHandler(this.btnEscolherMusica_Click);
+            // 
+            // anoToolStripMenuItem
+            // 
+            this.anoToolStripMenuItem.Name = "anoToolStripMenuItem";
+            this.anoToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
+            this.anoToolStripMenuItem.Text = "Ano";
+            this.anoToolStripMenuItem.Click += new System.EventHandler(this.anoToolStripMenuItem_Click);
+            // 
+            // textanopesq
+            // 
+            this.textanopesq.Location = new System.Drawing.Point(948, 141);
+            this.textanopesq.Mask = "9999";
+            this.textanopesq.Name = "textanopesq";
+            this.textanopesq.Size = new System.Drawing.Size(100, 22);
+            this.textanopesq.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(948, 116);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 17);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Ano de pesquisa";
+            // 
+            // button1
+            // 
+            this.button1.ContextMenuStrip = this.contextMenuStrip2;
+            this.button1.Location = new System.Drawing.Point(948, 183);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 28);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Pesquisar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Tela1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1121, 532);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textanopesq);
             this.Controls.Add(this.btnEscolherMusica);
             this.Controls.Add(this.btnEscolherMidia);
             this.Controls.Add(this.listBox1);
@@ -256,7 +301,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Tela1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -297,6 +342,10 @@
         private System.Windows.Forms.ToolStripMenuItem artistasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playlistsToolStripMenuItem;
         private System.Windows.Forms.Button btnEscolherMusica;
+        private System.Windows.Forms.ToolStripMenuItem anoToolStripMenuItem;
+        private System.Windows.Forms.MaskedTextBox textanopesq;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
