@@ -7,11 +7,9 @@ using System.Xml;
 
 namespace ProjetosMesquitasBarretos
 {
-   public class ClasseAlbumMusical: ClasseMidia
+   public class ClasseAlbumMusical: ClasseMidia, ICatalogo
     {
         string artista;
-        
-
         public string Artista
         {
             get
@@ -27,6 +25,7 @@ namespace ProjetosMesquitasBarretos
                     artista = value;
             }
         }
+      
         
     }
 }

@@ -44,6 +44,7 @@
             this.bToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fotoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.anoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEscolherMidia = new System.Windows.Forms.Button();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ordemAlfabéticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +52,6 @@
             this.artistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playlistsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEscolherMusica = new System.Windows.Forms.Button();
-            this.anoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textanopesq = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -189,6 +189,13 @@
             this.fotoToolStripMenuItem.Text = "Foto";
             this.fotoToolStripMenuItem.Click += new System.EventHandler(this.fotoToolStripMenuItem_Click);
             // 
+            // anoToolStripMenuItem
+            // 
+            this.anoToolStripMenuItem.Name = "anoToolStripMenuItem";
+            this.anoToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
+            this.anoToolStripMenuItem.Text = "Ano";
+            this.anoToolStripMenuItem.Click += new System.EventHandler(this.anoToolStripMenuItem_Click);
+            // 
             // btnEscolherMidia
             // 
             this.btnEscolherMidia.ContextMenuStrip = this.contextMenuStrip1;
@@ -210,13 +217,14 @@
             this.artistasToolStripMenuItem,
             this.playlistsToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(197, 100);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(197, 128);
             // 
             // ordemAlfabéticaToolStripMenuItem
             // 
             this.ordemAlfabéticaToolStripMenuItem.Name = "ordemAlfabéticaToolStripMenuItem";
             this.ordemAlfabéticaToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
             this.ordemAlfabéticaToolStripMenuItem.Text = "Ordem Alfabética";
+            this.ordemAlfabéticaToolStripMenuItem.Click += new System.EventHandler(this.ordemAlfabéticaToolStripMenuItem_Click);
             // 
             // álbunsToolStripMenuItem
             // 
@@ -247,13 +255,6 @@
             this.btnEscolherMusica.Text = "Ordem Alfabética";
             this.btnEscolherMusica.UseVisualStyleBackColor = true;
             this.btnEscolherMusica.Click += new System.EventHandler(this.btnEscolherMusica_Click);
-            // 
-            // anoToolStripMenuItem
-            // 
-            this.anoToolStripMenuItem.Name = "anoToolStripMenuItem";
-            this.anoToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
-            this.anoToolStripMenuItem.Text = "Ano";
-            this.anoToolStripMenuItem.Click += new System.EventHandler(this.anoToolStripMenuItem_Click);
             // 
             // textanopesq
             // 

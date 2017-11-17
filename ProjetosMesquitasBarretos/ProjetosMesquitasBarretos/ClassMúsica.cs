@@ -20,6 +20,18 @@ namespace ProjetosMesquitasBarretos
         int volume;
         double duracao;
         private FormatoEnummusica fmusica;
+        string album;
+
+        public string Album
+        {
+            get { return album; }
+            set 
+            {
+                if (String.IsNullOrEmpty(value))
+                    throw new Exception("Digite um nome válido  para álbum !!!");
+                album = value; 
+            }
+        }
 
         public int Volume
         {
@@ -77,10 +89,9 @@ namespace ProjetosMesquitasBarretos
         {
             throw new NotImplementedException();
         }
-
         public void IncluiMusica(ClassMusica m)
         {
-            string dados = "Id" + "|" + m.Id.ToString() +"|"+"Nome"+"|"+m.Nome+ "|" + "Descrição" + "|" + m.Descrição.ToString() + "|" + "Dados" + "|" + m.ArquivoDeDados + "|" + "Formato" + "|" + m.Fmusica + "|" + "Duração" + "|" + m.Duracao.ToString() + "|" + "Volume" + "|" + m.Volume.ToString()+ "|" +"Ano de Lançamento"+"|"+ m.Anodelancamento+"|"+"Música"+Environment.NewLine;
+            string dados = "Id" + "|" + m.Id.ToString() +"|"+"Nome"+"|"+m.Nome+"|" + "Descrição" + "|" + m.Descrição.ToString() + "|" + "Dados" + "|" + m.ArquivoDeDados + "|" + "Formato" + "|" + m.Fmusica + "|" + "Duração" + "|" + m.Duracao.ToString() + "|" + "Volume" + "|" + m.Volume.ToString()+ "|" +"Ano de Lançamento"+"|"+ m.Anodelancamento+"|"+"Música"+Environment.NewLine;
            if(File.Exists("Mídia.txt"))
            {
                

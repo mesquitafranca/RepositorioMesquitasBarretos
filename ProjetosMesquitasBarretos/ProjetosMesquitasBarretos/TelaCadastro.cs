@@ -181,7 +181,6 @@ namespace ProjetosMesquitasBarretos
                     MessageBox.Show(erro.Message);
                 }
             }
-           
 
             if (radioVideo.Checked == true)
             {

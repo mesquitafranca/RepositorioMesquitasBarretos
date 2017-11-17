@@ -16,27 +16,27 @@ namespace ProjetosMesquitasBarretos
         public Tela1()
         {
             InitializeComponent();
-           
+
 
 
         }
 
-       public void lerTxt ()
+        public void lerTxt()
         {
             string[] dados = File.ReadAllLines("Mídia.txt");
-            for(int i =0;i<dados.Length;i++)
+            for (int i = 0; i < dados.Length; i++)
             {
-                string aux =  "";
+                string aux = "";
                 string[] informacao = dados[i].Split('|');
-                for (int p = 0; p < informacao.Length;p++ )
+                for (int p = 0; p < informacao.Length; p++)
                 {
                     if (informacao[p] == "Música" || informacao[p] == "Vídeo" || informacao[p] == "Foto")
                         aux = informacao[p];
                 }
-                    listBox1.Items.Add("ID-" + informacao[1]+"-"+aux);
-                
+                listBox1.Items.Add("ID-" + informacao[1] + "-" + aux);
+
             }
-           
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace ProjetosMesquitasBarretos
 
         private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
         {
-            
+
         }
 
         private void informaçãoSobreAMídiaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -83,17 +83,17 @@ namespace ProjetosMesquitasBarretos
 
         private void novaPlaylistToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
-           
+
         }
 
         private void btnEscolherMidia_Click(object sender, EventArgs e)
@@ -103,65 +103,73 @@ namespace ProjetosMesquitasBarretos
         private void aToolStripMenuItem_Click(object sender, EventArgs e)
         {
             lerTxt();
-            
+
         }
-        private Pilha PreencheObjeto(string[] arquivotexto,int verificamidia)
+        private void PreencheObjeto(string[] arquivotexto, int verificamidia)
         {
             minhapilha = new Pilha();
-          for (int i = 0; i < arquivotexto.Length; i++)
-          {
-              string aux = "";
-              string[] informacao = arquivotexto[i].Split('|');
-              for (int p = 0; p < informacao.Length; p++)
-              {
-                  if (informacao[p] == "Música" || informacao[p] == "Vídeo" || informacao[p] == "Foto")
-                      aux = informacao[p];
-                  if (aux == "Música" && verificamidia == 3)
-                  {
-                      musica = new ClassMusica();
-                      musica.Id = Convert.ToInt16(informacao[1]);
-                      musica.Nome = informacao[3];
-                      musica.Descrição = informacao[5];
-                      musica.ArquivoDeDados = informacao[7];
-                      musica.Fmusica = (FormatoEnummusica)Enum.Parse(typeof(FormatoEnummusica), informacao[9]);
-                      musica.Duracao = Convert.ToDouble(informacao[11]);
-                      musica.Volume = Convert.ToInt16(informacao[13]);
-                      musica.Anodelancamento = Convert.ToInt32(informacao[15]);
-                      minhapilha.Empilhar(musica);
-                  }
+            for (int i = 0; i < arquivotexto.Length; i++)
+            {
+                string aux = "";
+                string[] informacao = arquivotexto[i].Split('|');
+                for (int p = 0; p < informacao.Length; p++)
+                {
+                    if (informacao[p] == "Música" || informacao[p] == "Vídeo" || informacao[p] == "Foto")
+                    {
+                        aux = informacao[p];
+                        break;
+                    }
 
-                  else if (aux == "Vídeo" && verificamidia == 1)
-                  {
-                      video = new ClasseVídeo();
-                      video.Id = Convert.ToInt16(informacao[1]);
-                      video.Nome = informacao[3];
-                      video.Descrição = informacao[5];
-                      video.ArquivoDeDados = informacao[7];
-                      video.Fvideo = (FormatoEnumVideo)Enum.Parse(typeof(FormatoEnumVideo), informacao[9]);
-                      video.Idiomaenum = (IdiomaEnum)Enum.Parse(typeof(IdiomaEnum),(informacao[11]));
-                      video.Possuilegenda = Convert.ToBoolean(informacao[13]);
-                      video.Anodelancamento = Convert.ToInt32(informacao[15]);
-                      minhapilha.Empilhar(video);
-                  }
-                  else if (aux == "Foto" &&  verificamidia == 2)
-                  {
-                      foto = new ClasseFoto();
-                      foto.Id = Convert.ToInt16(informacao[1]);
-                      foto.Nome = informacao[3];
-                      foto.Descrição = informacao[5];
-                      foto.ArquivoDeDados = informacao[7];
-                      foto.Local= informacao[9];
-                      foto.MegaPixels = Convert.ToDouble(informacao[11]);
-                      foto.TempoEmSegundosParaExibir = Convert.ToInt16(informacao[13]);
-                      foto.Anodelancamento = Convert.ToInt32(informacao[15]);
-                      minhapilha.Empilhar(foto);
-                  }
-                  
-                  
-              }
-          }
-          return minhapilha;
+                }
+                    if (aux == "Música" && verificamidia == 3 || verificamidia == -1)
+                    {
+                        musica = new ClassMusica();
+                        musica.Id = Convert.ToInt16(informacao[1]);
+                        musica.Nome = informacao[3];
+                        musica.Descrição = informacao[5];
+                        musica.ArquivoDeDados = informacao[7];
+                        musica.Fmusica = (FormatoEnummusica)Enum.Parse(typeof(FormatoEnummusica), informacao[9]);
+                        musica.Duracao = Convert.ToDouble(informacao[11]);
+                        musica.Volume = Convert.ToInt16(informacao[13]);
+                        musica.Anodelancamento = Convert.ToInt32(informacao[15]);
+                        listBox1.Items.Add("ID:" + informacao[1] + "-Nome:" + informacao[3] + "-Mídia: Música" + "\n");
+                        
+                    }
+
+                    else if (aux == "Vídeo" && verificamidia == 1 || verificamidia == -1)
+                    {
+                        video = new ClasseVídeo();
+                        video.Id = Convert.ToInt16(informacao[1]);
+                        video.Nome = informacao[3];
+                        video.Descrição = informacao[5];
+                        video.ArquivoDeDados = informacao[7];
+                        video.Fvideo = (FormatoEnumVideo)Enum.Parse(typeof(FormatoEnumVideo), informacao[9]);
+                        video.Idiomaenum = (IdiomaEnum)Enum.Parse(typeof(IdiomaEnum), (informacao[11]));
+                        video.Possuilegenda = Convert.ToBoolean(informacao[13]);
+                        video.Anodelancamento = Convert.ToInt32(informacao[15]);
+                        listBox1.Items.Add("ID:" + informacao[1] + "-Nome:" + informacao[3] + "-Mídia:Vídeo" + "\n");
+                        
+                    }
+                    else if (aux == "Foto" && verificamidia == 2 || verificamidia == -1)
+                    {
+                        foto = new ClasseFoto();
+                        foto.Id = Convert.ToInt16(informacao[1]);
+                        foto.Nome = informacao[3];
+                        foto.Descrição = informacao[5];
+                        foto.ArquivoDeDados = informacao[7];
+                        foto.Local = informacao[9];
+                        foto.MegaPixels = Convert.ToDouble(informacao[11]);
+                        foto.TempoEmSegundosParaExibir = Convert.ToInt16(informacao[13]);
+                        foto.Anodelancamento = Convert.ToInt32(informacao[15]);
+                        listBox1.Items.Add("ID:" + informacao[1] + "-Nome" + informacao[3] + "-Mídia:Foto" + "\n");
+                        
+                    }
+
+
+                
+            }
           
+
         }
         Pilha minhapilha;
         ClassMusica musica;
@@ -172,7 +180,7 @@ namespace ProjetosMesquitasBarretos
             string[] arquivotexto = File.ReadAllLines("Mídia.txt");
             try
             {
-                PreencheObjeto(arquivotexto,3);
+                PreencheObjeto(arquivotexto, 3);
             }
             catch
             {
@@ -185,13 +193,13 @@ namespace ProjetosMesquitasBarretos
             string[] arquivotexto = File.ReadAllLines("Mídia.txt");
             try
             {
-                PreencheObjeto(arquivotexto,1);
+                PreencheObjeto(arquivotexto, 1);
             }
             catch
             {
                 MessageBox.Show("Vídeos não cadastrados");
             }
-            
+
         }
 
         private void fotoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -199,9 +207,9 @@ namespace ProjetosMesquitasBarretos
             string[] arquivotexto = File.ReadAllLines("Mídia.txt");
             try
             {
-                PreencheObjeto(arquivotexto,2);
+                PreencheObjeto(arquivotexto, 2);
             }
-            catch 
+            catch
             {
                 MessageBox.Show("Fotos não cadastradas");
             }
@@ -213,20 +221,20 @@ namespace ProjetosMesquitasBarretos
 
         private void anoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-             string[] dados = File.ReadAllLines("Mídia.txt");
+            string[] dados = File.ReadAllLines("Mídia.txt");
             int[] posicoes = ProcuraPorAno(Convert.ToInt32(textanopesq.Text));
-            for(int i = 0;i<posicoes.Length;i++)
+            for (int i = 0; i < posicoes.Length; i++)
             {
                 if (posicoes[i] < posicoes[0])
                     break;
                 listBox1.Items.Add(dados[posicoes[i]]);
             }
-            
+
         }
 
         private int[] ProcuraPorAno(int anopesquisado)
@@ -240,17 +248,52 @@ namespace ProjetosMesquitasBarretos
                 string[] informacao = dados[i].Split('|');
                 for (int p = 0; p < informacao.Length; p++)
                 {
-                    if (informacao[p] == "Ano de Lançamento"&& Convert.ToInt32(informacao[p+1]) == anopesquisado)
+                    if (informacao[p] == "Ano de Lançamento" && Convert.ToInt32(informacao[p + 1]) == anopesquisado)
                     {
                         ano = Convert.ToInt32(informacao[p + 1]);
                         linhasdesejadas[contador] = i;
                         contador++;
                     }
                 }
-                
+
 
             }
             return linhasdesejadas;
+        }
+
+        private string[] OrdemAlfabética()
+        {
+            string[] arquivotexto = File.ReadAllLines("Mídia.txt");
+            int contador = 0;
+            string varaux;
+            string[] nome = new string[arquivotexto.Length];
+            for (int t = 0; t < arquivotexto.Length; t++)
+            {
+                string[] aux = arquivotexto[t].Split('|');
+                nome[t] = aux[3];
+            }
+
+            for (int i = 0; i < nome.Length - 1; i++)
+            {
+                contador = i;
+                for(int j=i+1;j<nome.Length;j++)
+                {
+                    if (nome[j].CompareTo(nome[contador]) == -1)
+                        contador = j;
+                }
+                varaux = arquivotexto[contador];
+                arquivotexto[contador] = arquivotexto[i];
+                arquivotexto[i] = varaux;
+            }
+
+                return arquivotexto;
+        }
+
+
+        private void ordemAlfabéticaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string[] vetoremordem = OrdemAlfabética();
+            PreencheObjeto(vetoremordem, -1);
         }
     }
 }

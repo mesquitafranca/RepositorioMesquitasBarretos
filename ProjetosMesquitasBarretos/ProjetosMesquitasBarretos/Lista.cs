@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ProjetosMesquitasBarretos
 {
-    class Lista
+   class Lista
     {
         Nodo primeiro = null;
         Nodo ultimo = null;
