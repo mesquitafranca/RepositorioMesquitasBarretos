@@ -98,6 +98,7 @@ namespace ProjetosMesquitasBarretos
 
         private void btnEscolherMidia_Click(object sender, EventArgs e)
         {
+            
         }
 
         private void aToolStripMenuItem_Click(object sender, EventArgs e)
@@ -294,6 +295,29 @@ namespace ProjetosMesquitasBarretos
         {
             string[] vetoremordem = OrdemAlfabética();
             PreencheObjeto(vetoremordem, -1);
+        }
+
+        private void contextMenuStrip2_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void btnEscolherMidia_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+                this.contextMenuStrip1.Show(sender as Control, e.X, e.Y);
+        }
+
+        private void btnEscolherMusica_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+                this.contextMenuStrip2.Show(sender as Control, e.X, e.Y);
+        }
+
+        private void btnreproducao_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+                this.contextMenuStrip3.Show(sender as Control, e.X, e.Y);
         }
     }
 }

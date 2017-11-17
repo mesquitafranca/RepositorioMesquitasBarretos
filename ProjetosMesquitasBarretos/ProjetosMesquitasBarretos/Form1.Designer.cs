@@ -55,11 +55,17 @@
             this.textanopesq = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnreproducao = new System.Windows.Forms.Button();
+            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.pilhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
+            this.contextMenuStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -207,6 +213,7 @@
             this.btnEscolherMidia.Text = "Todas as Mídias";
             this.btnEscolherMidia.UseVisualStyleBackColor = true;
             this.btnEscolherMidia.Click += new System.EventHandler(this.btnEscolherMidia_Click);
+            this.btnEscolherMidia.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnEscolherMidia_MouseUp);
             // 
             // contextMenuStrip2
             // 
@@ -217,7 +224,8 @@
             this.artistasToolStripMenuItem,
             this.playlistsToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(197, 128);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(197, 100);
+            this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
             // 
             // ordemAlfabéticaToolStripMenuItem
             // 
@@ -255,6 +263,7 @@
             this.btnEscolherMusica.Text = "Ordem Alfabética";
             this.btnEscolherMusica.UseVisualStyleBackColor = true;
             this.btnEscolherMusica.Click += new System.EventHandler(this.btnEscolherMusica_Click);
+            this.btnEscolherMusica.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnEscolherMusica_MouseUp);
             // 
             // textanopesq
             // 
@@ -275,7 +284,6 @@
             // 
             // button1
             // 
-            this.button1.ContextMenuStrip = this.contextMenuStrip2;
             this.button1.Location = new System.Drawing.Point(948, 183);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
@@ -285,11 +293,52 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnreproducao
+            // 
+            this.btnreproducao.ContextMenuStrip = this.contextMenuStrip3;
+            this.btnreproducao.Location = new System.Drawing.Point(951, 231);
+            this.btnreproducao.Margin = new System.Windows.Forms.Padding(4);
+            this.btnreproducao.Name = "btnreproducao";
+            this.btnreproducao.Size = new System.Drawing.Size(114, 28);
+            this.btnreproducao.TabIndex = 19;
+            this.btnreproducao.Text = "Reprodução";
+            this.btnreproducao.UseVisualStyleBackColor = true;
+            this.btnreproducao.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnreproducao_MouseUp);
+            // 
+            // contextMenuStrip3
+            // 
+            this.contextMenuStrip3.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pilhaToolStripMenuItem,
+            this.filaToolStripMenuItem,
+            this.filaToolStripMenuItem1});
+            this.contextMenuStrip3.Name = "contextMenuStrip3";
+            this.contextMenuStrip3.Size = new System.Drawing.Size(111, 76);
+            // 
+            // pilhaToolStripMenuItem
+            // 
+            this.pilhaToolStripMenuItem.Name = "pilhaToolStripMenuItem";
+            this.pilhaToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
+            this.pilhaToolStripMenuItem.Text = "Pilha";
+            // 
+            // filaToolStripMenuItem
+            // 
+            this.filaToolStripMenuItem.Name = "filaToolStripMenuItem";
+            this.filaToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
+            this.filaToolStripMenuItem.Text = "Fila";
+            // 
+            // filaToolStripMenuItem1
+            // 
+            this.filaToolStripMenuItem1.Name = "filaToolStripMenuItem1";
+            this.filaToolStripMenuItem1.Size = new System.Drawing.Size(110, 24);
+            this.filaToolStripMenuItem1.Text = "Lista";
+            // 
             // Tela1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1121, 532);
+            this.Controls.Add(this.btnreproducao);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textanopesq);
@@ -315,6 +364,7 @@
             this.panel1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
+            this.contextMenuStrip3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,6 +397,11 @@
         private System.Windows.Forms.MaskedTextBox textanopesq;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnreproducao;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
+        private System.Windows.Forms.ToolStripMenuItem pilhaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem filaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem filaToolStripMenuItem1;
     }
 }
 
