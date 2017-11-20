@@ -11,7 +11,7 @@ namespace ProjetosMesquitasBarretos
         Nodo ultimo = null;
         int qtde = 0;
 
-        private void InserirNaPosicao(Nodo anterior, ClasseMidia valor)
+        public void InserirNaPosicao(Nodo anterior, ClasseMidia valor)
         {
             Nodo novo = new Nodo();
 
@@ -84,7 +84,7 @@ namespace ProjetosMesquitasBarretos
 
         public ClasseMidia RemoverDaPosicao(int posicao)
         {
-            if (posicao >= qtde || posicao < 0 || qtde == 0)
+            if (posicao > qtde || posicao < 0 || qtde == 0)
                 throw new Exception("Não é possível remover.");
 
             ClasseMidia valor;
@@ -134,6 +134,25 @@ namespace ProjetosMesquitasBarretos
 
             return false;
         }
+
+        public bool PesquisaAlbum(ClassMusica album)
+        {
+            Nodo aux = primeiro;
+            ClassMusica m = new ClassMusica();
+            while (aux != null)
+            {
+                if(aux.Dado is ClassMusica)
+                {
+                    m = aux.Dado as ClassMusica;
+                }
+                if (m.Album == album.Album)
+                    return true;
+                aux = aux.Proximo;
+            }
+
+            return false;
+        }
+        
 
 
 

@@ -16,7 +16,7 @@ namespace ProjetosMesquitasBarretos
     {
         AVI, WMV, MKV, MP4, MPEG, OUTROS
     }
-    public class ClasseVídeo: ClasseMidia, ICatalogo
+    public class ClasseVídeo: ClasseMidia, ICatalogo,ILocal
     {
         bool possuilegenda;
         private FormatoEnumVideo fvideo;
@@ -77,6 +77,11 @@ namespace ProjetosMesquitasBarretos
                 File.WriteAllText("Mídia.txt", dados);
         }
 
-        
+
+
+        bool ILocal.ValidaCaminho()
+        {
+            return true;
+        }
     }
 }

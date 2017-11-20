@@ -103,10 +103,11 @@ namespace ProjetosMesquitasBarretos
 
         private void aToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lerTxt();
+            string[] dados = File.ReadAllLines("Mídia.txt");
+            PreencheObjeto(dados, -1);
 
         }
-        private Lista PreencheObjeto(string[] arquivotexto, int verificamidia)
+        private void PreencheObjeto(string[] arquivotexto, int verificamidia)
         {
             minhalista = new Lista();
             for (int i = 0; i < arquivotexto.Length; i++)
@@ -122,7 +123,7 @@ namespace ProjetosMesquitasBarretos
                     }
 
                 }
-                    if (aux == "Música" && verificamidia == 3 || aux == "Música"&& verificamidia == -1)
+                if (aux == "Música" && verificamidia == 3 || aux == "Música" && verificamidia == -1)
                     {
                         musica = new ClassMusica();
                         musica.Id = Convert.ToInt16(informacao[1]);
@@ -135,10 +136,9 @@ namespace ProjetosMesquitasBarretos
                         musica.Volume = Convert.ToInt16(informacao[15]);
                         musica.Anodelancamento = Convert.ToInt32(informacao[17]);
                         musica.ValidaCaminho();
-                        musica.ToString();
-                        listBox1.Items.Add(musica.ToString());
                         minhalista.InserirNoFim(musica);
-                        return minhalista;
+                        listBox1.Items.Add(musica.ToString());
+                        
                         
                         
                     }
@@ -156,7 +156,7 @@ namespace ProjetosMesquitasBarretos
                         video.Anodelancamento = Convert.ToInt32(informacao[15]);
                         listBox1.Items.Add(video.ToString());
                         minhalista.InserirNoFim(video);
-                        return minhalista;
+                        
                         
                     }
                     else if (aux == "Foto" && verificamidia == 2 || aux == "Foto" && verificamidia == -1)
@@ -172,7 +172,7 @@ namespace ProjetosMesquitasBarretos
                         foto.Anodelancamento = Convert.ToInt32(informacao[15]);
                         listBox1.Items.Add(foto.ToString());
                         minhalista.InserirNoFim(foto);
-                        return minhalista;
+                        
                         
                     }
 
@@ -180,13 +180,14 @@ namespace ProjetosMesquitasBarretos
                 
             }
 
-            throw new Exception("Erro de leitura !!!");
+           
         }
         Pilha minhapilha;
         ClassMusica musica;
         ClasseVídeo video;
         ClasseFoto foto;
         Lista minhalista;
+        Lista listaauxiliar;
         private void bToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string[] arquivotexto = File.ReadAllLines("Mídia.txt");
@@ -332,31 +333,70 @@ namespace ProjetosMesquitasBarretos
         private void pilhaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             minhapilha = new Pilha();
+            listaauxiliar = new Lista();
             string[] arquivotexto = File.ReadAllLines("Mídia.txt");
             PreencheObjeto(arquivotexto, -1);
+            int contador = 0;
             for(int i = 0;i<arquivotexto.Length;i++)
             {
-                minhapilha.Empilhar(minhalista.RemoverDaPosicao(i));
+                minhapilha.Empilhar(minhalista.RemoverDaPosicao(contador));
+                contador++;
             }
+
+            listBox1.Items.Clear();
+            for (int t = 0; t < arquivotexto.Length;t++)
+            {
+                
+                objaux = minhapilha.Desempilhar();
+                listBox1.Items.Add(objaux.ToString());
+                listaauxiliar.InserirNoFim(objaux);
+                
+            }
+             
         }
+        ClasseMidia objaux;
 
         private void filaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             minhafila = new Fila();
-            
+            listaauxiliar = new Lista();
             string[] arquivotexto = File.ReadAllLines("Mídia.txt");
             PreencheObjeto(arquivotexto, -1);
             for (int i = 0; i < arquivotexto.Length; i++)
             {
                 minhafila.enfileirar(minhalista.RemoverDaPosicao(i));
             }
+            listBox1.Items.Clear();
+            for(int t=0;t<arquivotexto.Length;t++)
+            {
+                objaux = minhafila.desenfileira();
+                listaauxiliar.InserirNoFim(objaux);
+                listBox1.Items.Add(objaux.ToString());
 
+            }
         }
 
         private void filaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             string[] arquivotexto = File.ReadAllLines("Mídia.txt");
             PreencheObjeto(arquivotexto, -1);
+        }
+
+        private void álbunsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnIniciar_Click(object sender, EventArgs e)
+        {
+            if (listaauxiliar != null)
+                objaux = listaauxiliar.RemoverDaPosicao(0);
+            else
+                objaux = minhalista.RemoverDaPosicao(0);
+            
+            string conteudo = objaux.ArquivoDeDados;
+            axWindowsMediaPlayer1.URL = conteudo;
+            axWindowsMediaPlayer1.Ctlcontrols.play();
         }
     }
 }

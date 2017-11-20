@@ -60,6 +60,7 @@
             this.pilhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnIniciar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -239,6 +240,7 @@
             this.álbunsToolStripMenuItem.Name = "álbunsToolStripMenuItem";
             this.álbunsToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
             this.álbunsToolStripMenuItem.Text = "Álbuns";
+            this.álbunsToolStripMenuItem.Click += new System.EventHandler(this.álbunsToolStripMenuItem_Click);
             // 
             // artistasToolStripMenuItem
             // 
@@ -313,34 +315,45 @@
             this.filaToolStripMenuItem,
             this.filaToolStripMenuItem1});
             this.contextMenuStrip3.Name = "contextMenuStrip3";
-            this.contextMenuStrip3.Size = new System.Drawing.Size(176, 104);
+            this.contextMenuStrip3.Size = new System.Drawing.Size(111, 76);
             // 
             // pilhaToolStripMenuItem
             // 
             this.pilhaToolStripMenuItem.Name = "pilhaToolStripMenuItem";
-            this.pilhaToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.pilhaToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
             this.pilhaToolStripMenuItem.Text = "Pilha";
             this.pilhaToolStripMenuItem.Click += new System.EventHandler(this.pilhaToolStripMenuItem_Click);
             // 
             // filaToolStripMenuItem
             // 
             this.filaToolStripMenuItem.Name = "filaToolStripMenuItem";
-            this.filaToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.filaToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
             this.filaToolStripMenuItem.Text = "Fila";
             this.filaToolStripMenuItem.Click += new System.EventHandler(this.filaToolStripMenuItem_Click);
             // 
             // filaToolStripMenuItem1
             // 
             this.filaToolStripMenuItem1.Name = "filaToolStripMenuItem1";
-            this.filaToolStripMenuItem1.Size = new System.Drawing.Size(175, 24);
+            this.filaToolStripMenuItem1.Size = new System.Drawing.Size(110, 24);
             this.filaToolStripMenuItem1.Text = "Lista";
             this.filaToolStripMenuItem1.Click += new System.EventHandler(this.filaToolStripMenuItem1_Click);
+            // 
+            // btnIniciar
+            // 
+            this.btnIniciar.Location = new System.Drawing.Point(973, 278);
+            this.btnIniciar.Name = "btnIniciar";
+            this.btnIniciar.Size = new System.Drawing.Size(75, 23);
+            this.btnIniciar.TabIndex = 20;
+            this.btnIniciar.Text = "Iniciar";
+            this.btnIniciar.UseVisualStyleBackColor = true;
+            this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
             // Tela1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1121, 532);
+            this.Controls.Add(this.btnIniciar);
             this.Controls.Add(this.btnreproducao);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -405,6 +418,7 @@
         private System.Windows.Forms.ToolStripMenuItem pilhaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filaToolStripMenuItem1;
+        private System.Windows.Forms.Button btnIniciar;
     }
 }
 

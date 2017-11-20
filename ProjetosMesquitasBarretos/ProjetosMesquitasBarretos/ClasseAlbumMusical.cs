@@ -7,8 +7,11 @@ using System.Xml;
 
 namespace ProjetosMesquitasBarretos
 {
+    
    public class ClasseAlbumMusical: ClasseMidia, ICatalogo
     {
+       
+       
         string artista;
         public string Artista
         {
@@ -24,7 +27,10 @@ namespace ProjetosMesquitasBarretos
                     throw new Exception("Digite um nome de artista válido !!!");
                     artista = value;
             }
+           
         }
+        Lista minhalista;
+       
       
         
     }

@@ -14,7 +14,7 @@ namespace ProjetosMesquitasBarretos
         mp3, wav, wma
     }
 
-    public class ClassMusica: ClasseMidia
+    public class ClassMusica: ClasseMidia, ILocal
     {
         int volume;
         double duracao;
