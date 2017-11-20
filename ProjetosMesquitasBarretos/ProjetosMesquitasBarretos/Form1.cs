@@ -135,7 +135,8 @@ namespace ProjetosMesquitasBarretos
                         musica.Volume = Convert.ToInt16(informacao[15]);
                         musica.Anodelancamento = Convert.ToInt32(informacao[17]);
                         musica.ValidaCaminho();
-                        listBox1.Items.Add("ID:" + informacao[1] + "-Nome:" + informacao[3] + "-Mídia: Música" + "\n");
+                        musica.ToString();
+                        listBox1.Items.Add(musica.ToString());
                         minhalista.InserirNoFim(musica);
                         return minhalista;
                         
@@ -153,7 +154,7 @@ namespace ProjetosMesquitasBarretos
                         video.Idiomaenum = (IdiomaEnum)Enum.Parse(typeof(IdiomaEnum), (informacao[11]));
                         video.Possuilegenda = Convert.ToBoolean(informacao[13]);
                         video.Anodelancamento = Convert.ToInt32(informacao[15]);
-                        listBox1.Items.Add("ID:" + informacao[1] + "-Nome:" + informacao[3] + "-Mídia:Vídeo" + "\n");
+                        listBox1.Items.Add(video.ToString());
                         minhalista.InserirNoFim(video);
                         return minhalista;
                         
@@ -169,7 +170,7 @@ namespace ProjetosMesquitasBarretos
                         foto.MegaPixels = Convert.ToDouble(informacao[11]);
                         foto.TempoEmSegundosParaExibir = Convert.ToInt16(informacao[13]);
                         foto.Anodelancamento = Convert.ToInt32(informacao[15]);
-                        listBox1.Items.Add("ID:" + informacao[1] + "-Nome" + informacao[3] + "-Mídia:Foto" + "\n");
+                        listBox1.Items.Add(foto.ToString());
                         minhalista.InserirNoFim(foto);
                         return minhalista;
                         

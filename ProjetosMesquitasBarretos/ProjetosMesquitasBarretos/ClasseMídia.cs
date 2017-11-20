@@ -104,6 +104,11 @@ namespace ProjetosMesquitasBarretos
 
 
         }
+
+        public virtual string ToString()
+        {
+            return ("Id:" + Id + "-" + "Nome:" + Nome + "-" + "Local: " + ArquivoDeDados);
+        }
         static public void Excluir(int m)
         {
             if (File.Exists("Mídia.txt"))
