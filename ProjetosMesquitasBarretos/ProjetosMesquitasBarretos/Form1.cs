@@ -17,7 +17,7 @@ namespace ProjetosMesquitasBarretos
         {
             InitializeComponent();
 
-
+            
 
         }
 
@@ -194,6 +194,7 @@ namespace ProjetosMesquitasBarretos
             try
             {
                 PreencheObjeto(arquivotexto, 3);
+                
             }
             catch
             {
@@ -207,6 +208,7 @@ namespace ProjetosMesquitasBarretos
             try
             {
                 PreencheObjeto(arquivotexto, 1);
+                
             }
             catch
             {
@@ -221,6 +223,7 @@ namespace ProjetosMesquitasBarretos
             try
             {
                 PreencheObjeto(arquivotexto, 2);
+                btnIniciar.Enabled = true;
             }
             catch
             {
@@ -240,14 +243,17 @@ namespace ProjetosMesquitasBarretos
         private void button1_Click(object sender, EventArgs e)
         {
             string[] dados = File.ReadAllLines("Mídia.txt");
+            
             int[] posicoes = ProcuraPorAno(Convert.ToInt32(textanopesq.Text));
+            string[] vetano = new string[posicoes.Length];
             for (int i = 0; i < posicoes.Length; i++)
             {
                 if (posicoes[i] < posicoes[0])
                     break;
-                listBox1.Items.Add(dados[posicoes[i]]);
+                vetano[i] = dados[i]; ;
             }
-
+            PreencheObjeto(vetano, -1);
+           
         }
 
         private int[] ProcuraPorAno(int anopesquisado)
@@ -305,6 +311,7 @@ namespace ProjetosMesquitasBarretos
         {
             string[] vetoremordem = OrdemAlfabética();
             PreencheObjeto(vetoremordem, -1);
+            
         }
 
         private void contextMenuStrip2_Opening(object sender, CancelEventArgs e)
@@ -352,7 +359,7 @@ namespace ProjetosMesquitasBarretos
                 listaauxiliar.InserirNoFim(objaux);
                 
             }
-             
+            
         }
         ClasseMidia objaux;
 
@@ -374,12 +381,14 @@ namespace ProjetosMesquitasBarretos
                 listBox1.Items.Add(objaux.ToString());
 
             }
+           
         }
 
         private void filaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             string[] arquivotexto = File.ReadAllLines("Mídia.txt");
             PreencheObjeto(arquivotexto, -1);
+            
         }
 
         private void álbunsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -389,14 +398,21 @@ namespace ProjetosMesquitasBarretos
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            if (listaauxiliar != null)
-                objaux = listaauxiliar.RemoverDaPosicao(0);
-            else
-                objaux = minhalista.RemoverDaPosicao(0);
-            
-            string conteudo = objaux.ArquivoDeDados;
-            axWindowsMediaPlayer1.URL = conteudo;
-            axWindowsMediaPlayer1.Ctlcontrols.play();
+            try
+            {
+                if (listaauxiliar != null)
+                    objaux = listaauxiliar.RemoverDaPosicao(0);
+                else
+                    objaux = minhalista.RemoverDaPosicao(0);
+
+                string conteudo = objaux.ArquivoDeDados;
+                axWindowsMediaPlayer1.URL = conteudo;
+                axWindowsMediaPlayer1.Ctlcontrols.play();
+            }
+            catch
+            {
+                MessageBox.Show("Crie uma playlist primeiro !!!");
+            }
         }
     }
 }
