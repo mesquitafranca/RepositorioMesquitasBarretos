@@ -8,11 +8,7 @@ namespace ProjetosMesquitasBarretos
 {
     interface ILocal
     {
-        string ArquivoMidia
-        {
-            get;
-            set;
-        }
+        
         bool ValidaCaminho();
     }
 }

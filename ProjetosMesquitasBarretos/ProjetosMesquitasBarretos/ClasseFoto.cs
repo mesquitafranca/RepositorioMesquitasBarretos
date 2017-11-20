@@ -8,12 +8,12 @@ using System.IO;
 
 namespace ProjetosMesquitasBarretos
 {
-   public class ClasseFoto: ClasseMidia
+   public class ClasseFoto: ClasseMidia,ILocal,ICatalogo
     {
         string local; //local onde a foto foi tirada
         double megaPixels;
         int tempoEmSegundosParaExibir; //tempo em segundos que a foto será exibida no player
-        string nome;
+       
 
        
 
@@ -31,7 +31,10 @@ namespace ProjetosMesquitasBarretos
                 local = value;
             }
         }
-
+       public bool ValidaCaminho()
+        {
+            return true;
+        }
         public double MegaPixels
         {
             get

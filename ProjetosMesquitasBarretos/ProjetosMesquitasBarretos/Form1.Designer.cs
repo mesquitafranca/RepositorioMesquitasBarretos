@@ -313,25 +313,28 @@
             this.filaToolStripMenuItem,
             this.filaToolStripMenuItem1});
             this.contextMenuStrip3.Name = "contextMenuStrip3";
-            this.contextMenuStrip3.Size = new System.Drawing.Size(111, 76);
+            this.contextMenuStrip3.Size = new System.Drawing.Size(176, 104);
             // 
             // pilhaToolStripMenuItem
             // 
             this.pilhaToolStripMenuItem.Name = "pilhaToolStripMenuItem";
-            this.pilhaToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
+            this.pilhaToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.pilhaToolStripMenuItem.Text = "Pilha";
+            this.pilhaToolStripMenuItem.Click += new System.EventHandler(this.pilhaToolStripMenuItem_Click);
             // 
             // filaToolStripMenuItem
             // 
             this.filaToolStripMenuItem.Name = "filaToolStripMenuItem";
-            this.filaToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
+            this.filaToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.filaToolStripMenuItem.Text = "Fila";
+            this.filaToolStripMenuItem.Click += new System.EventHandler(this.filaToolStripMenuItem_Click);
             // 
             // filaToolStripMenuItem1
             // 
             this.filaToolStripMenuItem1.Name = "filaToolStripMenuItem1";
-            this.filaToolStripMenuItem1.Size = new System.Drawing.Size(110, 24);
+            this.filaToolStripMenuItem1.Size = new System.Drawing.Size(175, 24);
             this.filaToolStripMenuItem1.Text = "Lista";
+            this.filaToolStripMenuItem1.Click += new System.EventHandler(this.filaToolStripMenuItem1_Click);
             // 
             // Tela1
             // 

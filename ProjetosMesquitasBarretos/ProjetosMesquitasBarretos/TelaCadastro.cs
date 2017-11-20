@@ -169,6 +169,7 @@ namespace ProjetosMesquitasBarretos
                     musica.Descrição = textDescricao.Text;
                     musica.ArquivoDeDados = labelLink.Text;
                     musica.Nome = textNome.Text;
+                    musica.Album = textAlbum.Text;
                     musica.Fmusica = (FormatoEnummusica)cbFormato.SelectedItem;
                     musica.Duracao = Convert.ToDouble(textDuracao.Text);
                     musica.Volume = Convert.ToInt32(textVolume.Text);

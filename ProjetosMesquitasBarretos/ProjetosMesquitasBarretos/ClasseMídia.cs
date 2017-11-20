@@ -8,7 +8,7 @@ using System.IO;
 
 namespace ProjetosMesquitasBarretos
 {
-    public abstract class ClasseMidia : ICatalogo
+    public abstract class ClasseMidia
     {
         int id; //Identificação da música
         string descrição; //Comentários Gerais sobre a música

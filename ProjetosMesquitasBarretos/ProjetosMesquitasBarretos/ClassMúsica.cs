@@ -14,9 +14,8 @@ namespace ProjetosMesquitasBarretos
         mp3, wav, wma
     }
 
-    public class ClassMusica: ClasseMidia,ILocal
+    public class ClassMusica: ClasseMidia
     {
-        string arquivomidia;
         int volume;
         double duracao;
         private FormatoEnummusica fmusica;
@@ -72,26 +71,15 @@ namespace ProjetosMesquitasBarretos
             }
         }
 
-        public string ArquivoMidia
-        {
-            get
-            {
-                return arquivomidia;
-            }
-
-            set
-            {
-                arquivomidia = value;
-            }
-        }
+       
 
         public bool ValidaCaminho()
         {
-            throw new NotImplementedException();
+            return true;
         }
         public void IncluiMusica(ClassMusica m)
         {
-            string dados = "Id" + "|" + m.Id.ToString() +"|"+"Nome"+"|"+m.Nome+"|" + "Descrição" + "|" + m.Descrição.ToString() + "|" + "Dados" + "|" + m.ArquivoDeDados + "|" + "Formato" + "|" + m.Fmusica + "|" + "Duração" + "|" + m.Duracao.ToString() + "|" + "Volume" + "|" + m.Volume.ToString()+ "|" +"Ano de Lançamento"+"|"+ m.Anodelancamento+"|"+"Música"+Environment.NewLine;
+            string dados = "Id" + "|" + m.Id.ToString() +"|"+"Nome"+"|"+m.Nome+"|"+"Álbum"+"|"+m.Album+"|"+"Descrição" + "|" + m.Descrição.ToString() + "|" + "Dados" + "|" + m.ArquivoDeDados + "|" + "Formato" + "|" + m.Fmusica + "|" + "Duração" + "|" + m.Duracao.ToString() + "|" + "Volume" + "|" + m.Volume.ToString()+ "|" +"Ano de Lançamento"+"|"+ m.Anodelancamento+"|"+"Música"+Environment.NewLine;
            if(File.Exists("Mídia.txt"))
            {
                

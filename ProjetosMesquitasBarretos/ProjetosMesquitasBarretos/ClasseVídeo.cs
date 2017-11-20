@@ -16,7 +16,7 @@ namespace ProjetosMesquitasBarretos
     {
         AVI, WMV, MKV, MP4, MPEG, OUTROS
     }
-    public class ClasseVídeo: ClasseMidia
+    public class ClasseVídeo: ClasseMidia, ICatalogo
     {
         bool possuilegenda;
         private FormatoEnumVideo fvideo;

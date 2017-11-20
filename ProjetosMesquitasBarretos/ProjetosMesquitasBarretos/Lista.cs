@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ProjetosMesquitasBarretos
 {
-   class Lista
+    class Lista
     {
         Nodo primeiro = null;
         Nodo ultimo = null;
@@ -14,8 +14,8 @@ namespace ProjetosMesquitasBarretos
         private void InserirNaPosicao(Nodo anterior, ClasseMidia valor)
         {
             Nodo novo = new Nodo();
-            novo.Dado = valor;
 
+            novo.Dado = valor;
             if (anterior == null)
             {
                 if (qtde == 0)
@@ -95,7 +95,7 @@ namespace ProjetosMesquitasBarretos
                 valor = primeiro.Dado;
                 primeiro = ultimo = null;
                 return valor;
-            }           
+            }
             else
             {
                 //nodoApagado irá armazenar o nodo será apagado.
@@ -118,7 +118,7 @@ namespace ProjetosMesquitasBarretos
                     nodoApagado.Proximo.Anterior = nodoApagado.Anterior;
 
                 return valor;
-            }           
+            }
         }
 
 
