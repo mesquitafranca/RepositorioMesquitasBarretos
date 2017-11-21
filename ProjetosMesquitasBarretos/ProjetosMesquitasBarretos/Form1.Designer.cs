@@ -61,6 +61,8 @@
             this.filaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnIniciar = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -340,7 +342,7 @@
             // 
             // btnIniciar
             // 
-            this.btnIniciar.Location = new System.Drawing.Point(973, 278);
+            this.btnIniciar.Location = new System.Drawing.Point(948, 277);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(75, 23);
             this.btnIniciar.TabIndex = 20;
@@ -348,11 +350,27 @@
             this.btnIniciar.UseVisualStyleBackColor = true;
             this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1043, 283);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "label2";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // Tela1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1121, 532);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnIniciar);
             this.Controls.Add(this.btnreproducao);
             this.Controls.Add(this.button1);
@@ -419,6 +437,8 @@
         private System.Windows.Forms.ToolStripMenuItem filaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filaToolStripMenuItem1;
         private System.Windows.Forms.Button btnIniciar;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

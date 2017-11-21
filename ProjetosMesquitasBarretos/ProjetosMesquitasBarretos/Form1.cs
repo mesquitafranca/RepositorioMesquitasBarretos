@@ -244,38 +244,51 @@ namespace ProjetosMesquitasBarretos
         {
             string[] dados = File.ReadAllLines("Mídia.txt");
             
-            int[] posicoes = ProcuraPorAno(Convert.ToInt32(textanopesq.Text));
+            string[] posicoes = ProcuraPorAno(Convert.ToInt32(textanopesq.Text));
             string[] vetano = new string[posicoes.Length];
             for (int i = 0; i < posicoes.Length; i++)
             {
-                if (posicoes[i] < posicoes[0])
+                if (Convert.ToInt32(posicoes[i]) < Convert.ToInt32(posicoes[0]))
                     break;
-                vetano[i] = dados[i]; ;
+                vetano[i] = dados[Convert.ToInt32(posicoes[i])];
             }
             PreencheObjeto(vetano, -1);
            
         }
 
-        private int[] ProcuraPorAno(int anopesquisado)
+        private string[] ProcuraPorAno(int anopesquisado)
         {
             string[] dados = File.ReadAllLines("Mídia.txt");
-            int[] ano = new int [dados.Length];
-            int[] linhasdesejadas = new int[dados.Length];
-            for (int p = 0; p < dados.Length;p++ )
+            int[] ano = new int[dados.Length];
+            string[] vetaux = new string[dados.Length];
+            int i = 0;
+            string auxnum = "";
+            for (i = 0; i < dados.Length; i++)
             {
-                string[] aux = dados[p].Split('|');
-                ano[p] = Convert.ToInt32(aux[15]);
+                
+                string[] informacao = dados[i].Split('|');
+                for (int p = 0; p < informacao.Length; p++)
+                {
+                    if (informacao[p] == "Ano de Lançamento")
+                    {
+                        if (Convert.ToInt32(informacao[p + 1]) == anopesquisado)
+                        {
+                            if (auxnum == "")
+                                auxnum = Convert.ToString(i);
+                            else
+                            auxnum += "|" + Convert.ToString(i);
+                        }
+
+                    }
+
+                }
+                vetaux = auxnum.Split('|');
+                
+
+
+                
             }
-            for (int i = 0; i < ano.Length;i++ )
-            {
-                if(ano[i] == anopesquisado)
-                    linhasdesejadas[i] = i;
-            }
-
-
-
-
-                return linhasdesejadas;
+            return vetaux;
         }
 
         private string[] OrdemAlfabética()
@@ -395,24 +408,62 @@ namespace ProjetosMesquitasBarretos
         {
             
         }
-
+        int tempodecorrido = 0;
+        int tempo = 0; 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
+             
             try
             {
                 if (listaauxiliar != null)
                     objaux = listaauxiliar.RemoverDaPosicao(0);
                 else
                     objaux = minhalista.RemoverDaPosicao(0);
-
+                if(objaux is ClasseFoto)
+                {
+                    tempo = (objaux as ClasseFoto).TempoEmSegundosParaExibir;
+                    timer1.Start();
+                }
+                
                 string conteudo = objaux.ArquivoDeDados;
                 axWindowsMediaPlayer1.URL = conteudo;
                 axWindowsMediaPlayer1.Ctlcontrols.play();
+                
             }
             catch
             {
                 MessageBox.Show("Crie uma playlist primeiro !!!");
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            tempodecorrido++;
+            label2.Text = Convert.ToString(tempodecorrido);
+            if (tempodecorrido == tempo)
+            {
+                timer1.Stop();
+                try
+                {
+                    if (listaauxiliar != null)
+                        objaux = listaauxiliar.RemoverDaPosicao(0);
+                    else
+                        objaux = minhalista.RemoverDaPosicao(0);
+                    string conteudo = objaux.ArquivoDeDados;
+                    axWindowsMediaPlayer1.URL = conteudo;
+                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                }
+                catch
+                {
+                    MessageBox.Show("Fim da playlist !!!");
+                }
+            }
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
