@@ -84,7 +84,7 @@ namespace ProjetosMesquitasBarretos
 
         public ClasseMidia RemoverDaPosicao(int posicao)
         {
-            if (posicao > qtde || posicao < 0 || qtde == 0)
+            if (posicao>qtde ||posicao < 0 || qtde == 0)
                 throw new Exception("Não é possível remover.");
 
             ClasseMidia valor;

@@ -343,11 +343,11 @@ namespace ProjetosMesquitasBarretos
             listaauxiliar = new Lista();
             string[] arquivotexto = File.ReadAllLines("Mídia.txt");
             PreencheObjeto(arquivotexto, -1);
-            int contador = 0;
+            
             for(int i = 0;i<arquivotexto.Length;i++)
             {
-                minhapilha.Empilhar(minhalista.RemoverDaPosicao(contador));
-                contador++;
+                minhapilha.Empilhar(minhalista.RemoverDaPosicao(0));
+                
             }
 
             listBox1.Items.Clear();
@@ -371,7 +371,7 @@ namespace ProjetosMesquitasBarretos
             PreencheObjeto(arquivotexto, -1);
             for (int i = 0; i < arquivotexto.Length; i++)
             {
-                minhafila.enfileirar(minhalista.RemoverDaPosicao(i));
+                minhafila.enfileirar(minhalista.RemoverDaPosicao(0));
             }
             listBox1.Items.Clear();
             for(int t=0;t<arquivotexto.Length;t++)
