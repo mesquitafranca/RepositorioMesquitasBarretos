@@ -138,7 +138,15 @@ namespace ProjetosMesquitasBarretos
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                labelLink.Text = openFileDialog1.FileName;
+                //copiar imagem
+                string pastaEXE = Path.GetDirectoryName(Application.ExecutablePath);
+                string pastaMídias = pastaEXE + "\\Mídias\\";
+                if (Directory.Exists(pastaMídias) == false)
+                    Directory.CreateDirectory(pastaMídias);
+
+                string nomeDestino = pastaMídias + Path.GetFileName(openFileDialog1.FileName);
+                File.Copy(openFileDialog1.FileName, nomeDestino, true);
+                labelLink.Text = nomeDestino;
                 labelLink.Visible = true;
             }
 

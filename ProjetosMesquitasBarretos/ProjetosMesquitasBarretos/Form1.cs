@@ -13,6 +13,7 @@ namespace ProjetosMesquitasBarretos
 {
     public partial class Tela1 : Form
     {
+        string pastafotos = Path.GetDirectoryName(Application.ExecutablePath) + "\\Mídias\\";
         public Tela1()
         {
             InitializeComponent();
@@ -409,10 +410,11 @@ namespace ProjetosMesquitasBarretos
             
         }
         int tempodecorrido = 0;
-        int tempo = 0; 
+        int tempo = 0;
+        string extencao = "";
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-             
+            
             try
             {
                 if (listaauxiliar != null)
@@ -421,11 +423,20 @@ namespace ProjetosMesquitasBarretos
                     objaux = minhalista.RemoverDaPosicao(0);
                 if(objaux is ClasseFoto)
                 {
+                    extencao = ".jpeg";
                     tempo = (objaux as ClasseFoto).TempoEmSegundosParaExibir;
                     timer1.Start();
                 }
+                else if(objaux is ClassMusica)
+                {
+                    extencao = (objaux as ClassMusica).Fmusica.ToString();
+                }
+                else if (objaux is ClasseVídeo)
+                {
+                    extencao = (objaux as ClasseVídeo).Fvideo.ToString();
+                }
                 
-                string conteudo = objaux.ArquivoDeDados;
+                string conteudo = pastafotos+objaux.Nome.ToLower()+"."+extencao;
                 axWindowsMediaPlayer1.URL = conteudo;
                 axWindowsMediaPlayer1.Ctlcontrols.play();
                 
@@ -438,6 +449,7 @@ namespace ProjetosMesquitasBarretos
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            
             tempodecorrido++;
             label2.Text = Convert.ToString(tempodecorrido);
             if (tempodecorrido == tempo)
@@ -449,7 +461,7 @@ namespace ProjetosMesquitasBarretos
                         objaux = listaauxiliar.RemoverDaPosicao(0);
                     else
                         objaux = minhalista.RemoverDaPosicao(0);
-                    string conteudo = objaux.ArquivoDeDados;
+                    string conteudo = pastafotos+objaux.ArquivoDeDados+".mp3";
                     axWindowsMediaPlayer1.URL = conteudo;
                     axWindowsMediaPlayer1.Ctlcontrols.play();
                 }
