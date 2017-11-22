@@ -328,7 +328,7 @@
             // labelLocal
             // 
             this.labelLocal.AutoSize = true;
-            this.labelLocal.Location = new System.Drawing.Point(23, 233);
+            this.labelLocal.Location = new System.Drawing.Point(23, 340);
             this.labelLocal.Name = "labelLocal";
             this.labelLocal.Size = new System.Drawing.Size(42, 17);
             this.labelLocal.TabIndex = 33;
@@ -336,7 +336,7 @@
             // 
             // textLocal
             // 
-            this.textLocal.Location = new System.Drawing.Point(108, 229);
+            this.textLocal.Location = new System.Drawing.Point(108, 337);
             this.textLocal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textLocal.Name = "textLocal";
             this.textLocal.Size = new System.Drawing.Size(100, 22);
@@ -383,9 +383,9 @@
             this.groupBoxLegenda.Controls.Add(this.rbSim);
             this.groupBoxLegenda.Controls.Add(this.rbNao);
             this.groupBoxLegenda.Location = new System.Drawing.Point(385, 229);
-            this.groupBoxLegenda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxLegenda.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxLegenda.Name = "groupBoxLegenda";
-            this.groupBoxLegenda.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxLegenda.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxLegenda.Size = new System.Drawing.Size(151, 123);
             this.groupBoxLegenda.TabIndex = 39;
             this.groupBoxLegenda.TabStop = false;
@@ -404,7 +404,7 @@
             // labelArtista
             // 
             this.labelArtista.AutoSize = true;
-            this.labelArtista.Location = new System.Drawing.Point(23, 340);
+            this.labelArtista.Location = new System.Drawing.Point(22, 340);
             this.labelArtista.Name = "labelArtista";
             this.labelArtista.Size = new System.Drawing.Size(48, 17);
             this.labelArtista.TabIndex = 41;
@@ -441,7 +441,7 @@
             // maskedTextExcluido
             // 
             this.maskedTextExcluido.Location = new System.Drawing.Point(152, 551);
-            this.maskedTextExcluido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.maskedTextExcluido.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextExcluido.Mask = "99";
             this.maskedTextExcluido.Name = "maskedTextExcluido";
             this.maskedTextExcluido.Size = new System.Drawing.Size(132, 22);
@@ -450,7 +450,7 @@
             // btnExcluirMidia
             // 
             this.btnExcluirMidia.Location = new System.Drawing.Point(332, 549);
-            this.btnExcluirMidia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExcluirMidia.Margin = new System.Windows.Forms.Padding(4);
             this.btnExcluirMidia.Name = "btnExcluirMidia";
             this.btnExcluirMidia.Size = new System.Drawing.Size(100, 28);
             this.btnExcluirMidia.TabIndex = 46;
@@ -471,7 +471,7 @@
             // TextBoxAno
             // 
             this.TextBoxAno.Location = new System.Drawing.Point(443, 188);
-            this.TextBoxAno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBoxAno.Margin = new System.Windows.Forms.Padding(4);
             this.TextBoxAno.Mask = "9999";
             this.TextBoxAno.Name = "TextBoxAno";
             this.TextBoxAno.Size = new System.Drawing.Size(132, 22);

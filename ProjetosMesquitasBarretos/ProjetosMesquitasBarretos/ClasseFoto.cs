@@ -8,12 +8,22 @@ using System.IO;
 
 namespace ProjetosMesquitasBarretos
 {
+    public enum Ffoto
+    {
+        jpg, bitmap, png
+    }
    public class ClasseFoto: ClasseMidia,ILocal,ICatalogo
     {
         string local; //local onde a foto foi tirada
         double megaPixels;
         int tempoEmSegundosParaExibir; //tempo em segundos que a foto será exibida no player
-       
+        private Ffoto formatofoto;
+
+        public Ffoto Formatofoto
+        {
+            get { return formatofoto; }
+            set { formatofoto = value; }
+        }
 
        
 
@@ -63,7 +73,7 @@ namespace ProjetosMesquitasBarretos
 
        public void Inclui(ClasseFoto c)
         {
-            string conteudo = "Id" + "|" + c.Id.ToString()+ "|" + "Nome" + "|" + c.Nome.ToString()+ "|" + "Descrição" + "|" + c.Descrição+ "|" + "Dados" + "|" + c.ArquivoDeDados+"|" + "Local" + "|" + c.Local + "|" + "MegaPixels" + "|" + c.MegaPixels.ToString() + "|" + "Tempo" + "|" + c.TempoEmSegundosParaExibir.ToString()+"|" + "Ano de Lançamento" + "|" + c.Anodelancamento.ToString() + "|"+"Foto" + Environment.NewLine;
+            string conteudo = "Id" + "|" + c.Id.ToString()+ "|" + "Nome" + "|" + c.Nome.ToString()+ "|" + "Descrição" + "|" + c.Descrição+ "|" + "Dados" + "|" + c.ArquivoDeDados+"|" + "Local" + "|" + c.Local + "|" + "MegaPixels" + "|" + c.MegaPixels.ToString() + "|" + "Tempo" + "|" + c.TempoEmSegundosParaExibir.ToString()+"|"+"Formato"+"|"+c.Formatofoto+"|" + "Ano de Lançamento" + "|" + c.Anodelancamento.ToString() + "|"+"Foto" + Environment.NewLine;
             if (File.Exists("Mídia.txt"))
             {
                 File.AppendAllText("Mídia.txt", conteudo);

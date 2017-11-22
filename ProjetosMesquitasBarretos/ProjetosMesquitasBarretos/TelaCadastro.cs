@@ -114,14 +114,14 @@ namespace ProjetosMesquitasBarretos
             textLocal.Visible = true;
             textMegaPixels.Visible = true;
             textTempo.Visible = true;
-
+            cbFormato.DataSource = Enum.GetValues(typeof(Ffoto));
             //Campos Excluídos
             labelIdioma.Visible = false;
             labelDuracao.Visible = false;
             labelVolume.Visible = false;
             labelArtista.Visible = false;
             labelAlbum.Visible = false;
-            labelFormato.Visible = false;
+            labelFormato.Visible = true;
 
             cbIdioma.Visible = false;
             rbNao.Visible = false;
@@ -131,7 +131,7 @@ namespace ProjetosMesquitasBarretos
             textArtista.Visible = false;
             textVolume.Visible = false;
             groupBoxLegenda.Visible = false;
-            cbFormato.Visible = false;
+            cbFormato.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -173,7 +173,7 @@ namespace ProjetosMesquitasBarretos
                 {
                     ClassMusica musica = new ClassMusica();
                     musica.Id = Convert.ToInt32(textId.Text);
-                    musica.VerificaId(musica);
+                    ClassMusica.VerificaId(Convert.ToInt16(textId.Text));
                     musica.Descrição = textDescricao.Text;
                     musica.ArquivoDeDados = labelLink.Text;
                     musica.Nome = textNome.Text;
@@ -197,7 +197,7 @@ namespace ProjetosMesquitasBarretos
                 {
                     ClasseVídeo video = new ClasseVídeo();
                     video.Id = Convert.ToInt32(textId.Text);
-                    video.VerificaId(video);
+                    ClasseVídeo.VerificaId(Convert.ToInt16(textId.Text));
                     video.Descrição = textDescricao.Text;
                     video.ArquivoDeDados = labelLink.Text;
                     video.Fvideo = (FormatoEnumVideo)cbFormato.SelectedItem;
@@ -222,13 +222,14 @@ namespace ProjetosMesquitasBarretos
                 {
                     ClasseFoto foto = new ClasseFoto();
                     foto.Id = Convert.ToInt32(textId.Text);
-                    foto.VerificaId(foto);
+                    ClasseFoto.VerificaId(Convert.ToInt16(textId.Text));
                     foto.Descrição = textDescricao.Text;
                     foto.ArquivoDeDados = labelLink.Text;
                     foto.Local = textLocal.Text;
                     foto.MegaPixels = Convert.ToDouble(textMegaPixels.Text);
                     foto.TempoEmSegundosParaExibir = Convert.ToInt32(textTempo.Text);
                     foto.Anodelancamento = Convert.ToInt32(TextBoxAno.Text);
+                    foto.Formatofoto = (Ffoto)cbFormato.SelectedItem;
                     foto.Nome = textNome.Text;
                     foto.Inclui(foto);
                     MessageBox.Show("Mídia salva com sucesso!");
@@ -274,5 +275,7 @@ namespace ProjetosMesquitasBarretos
             //Colocar Exceção
             ClasseMidia.Excluir(Convert.ToInt16(maskedTextExcluido.Text));
         }
+
+       
     }
 }

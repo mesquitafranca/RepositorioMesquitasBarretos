@@ -64,7 +64,7 @@ namespace ProjetosMesquitasBarretos
 
         private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void informaçãoSobreAMídiaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -170,7 +170,8 @@ namespace ProjetosMesquitasBarretos
                         foto.Local = informacao[9];
                         foto.MegaPixels = Convert.ToDouble(informacao[11]);
                         foto.TempoEmSegundosParaExibir = Convert.ToInt16(informacao[13]);
-                        foto.Anodelancamento = Convert.ToInt32(informacao[15]);
+                        foto.Anodelancamento = Convert.ToInt32(informacao[17]);
+                        foto.Formatofoto = (Ffoto)Enum.Parse(typeof(Ffoto), informacao[15]);
                         listBox1.Items.Add(foto.ToString());
                         minhalista.InserirNoFim(foto);
                         
@@ -423,13 +424,14 @@ namespace ProjetosMesquitasBarretos
                     objaux = minhalista.RemoverDaPosicao(0);
                 if(objaux is ClasseFoto)
                 {
-                    extencao = ".jpeg";
+                    extencao = (objaux as ClasseFoto).Formatofoto.ToString();
                     tempo = (objaux as ClasseFoto).TempoEmSegundosParaExibir;
                     timer1.Start();
                 }
                 else if(objaux is ClassMusica)
                 {
                     extencao = (objaux as ClassMusica).Fmusica.ToString();
+                    axWindowsMediaPlayer1.settings.volume = (objaux as ClassMusica).Volume * 100;
                 }
                 else if (objaux is ClasseVídeo)
                 {
@@ -438,6 +440,7 @@ namespace ProjetosMesquitasBarretos
                 
                 string conteudo = pastafotos+objaux.Nome.ToLower()+"."+extencao;
                 axWindowsMediaPlayer1.URL = conteudo;
+                
                 axWindowsMediaPlayer1.Ctlcontrols.play();
                 
             }
@@ -455,18 +458,37 @@ namespace ProjetosMesquitasBarretos
             if (tempodecorrido == tempo)
             {
                 timer1.Stop();
+                tempo = 0;
+                tempodecorrido = 0;
                 try
                 {
                     if (listaauxiliar != null)
                         objaux = listaauxiliar.RemoverDaPosicao(0);
                     else
                         objaux = minhalista.RemoverDaPosicao(0);
-                    string conteudo = pastafotos+objaux.ArquivoDeDados+".mp3";
+                    if (objaux is ClasseFoto)
+                    {
+                        extencao = (objaux as ClasseFoto).Formatofoto.ToString();
+                        tempo = (objaux as ClasseFoto).TempoEmSegundosParaExibir;
+                        timer1.Start();
+                    }
+                    else if (objaux is ClassMusica)
+                    {
+                        extencao = (objaux as ClassMusica).Fmusica.ToString();
+                        axWindowsMediaPlayer1.settings.volume = (objaux as ClassMusica).Volume * 100;
+                    }
+                    else if (objaux is ClasseVídeo)
+                    {
+                        extencao = (objaux as ClasseVídeo).Fvideo.ToString();
+                    }
+                    string conteudo = pastafotos + objaux.Nome.ToLower() + "." + extencao;
                     axWindowsMediaPlayer1.URL = conteudo;
                     axWindowsMediaPlayer1.Ctlcontrols.play();
                 }
                 catch
                 {
+                   
+                    axWindowsMediaPlayer1.Ctlcontrols.stop();
                     MessageBox.Show("Fim da playlist !!!");
                 }
             }

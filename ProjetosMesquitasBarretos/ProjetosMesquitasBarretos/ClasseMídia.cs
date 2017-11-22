@@ -87,7 +87,7 @@ namespace ProjetosMesquitasBarretos
             }
         }
 
-        public virtual void VerificaId(ClasseMidia m)
+        static public void VerificaId(int m)
         {
             if (File.Exists("Mídia.txt"))
             {
@@ -95,7 +95,7 @@ namespace ProjetosMesquitasBarretos
                 for (int i = 0; i < arquivo.Length; i++)
                 {
                     string[] dados = arquivo[i].Split('|');
-                    if (m.Id == Convert.ToInt32(dados[1]))
+                    if (m == Convert.ToInt32(dados[1]))
                         throw new Exception("Este ID já foi cadastrado !!!");
                 }
             }
