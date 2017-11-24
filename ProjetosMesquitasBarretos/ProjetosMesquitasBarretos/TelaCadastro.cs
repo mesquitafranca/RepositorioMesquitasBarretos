@@ -272,8 +272,15 @@ namespace ProjetosMesquitasBarretos
 
         private void btnExcluirMidia_Click(object sender, EventArgs e)
         {
-            //Colocar Exceção
-            ClasseMidia.Excluir(Convert.ToInt16(maskedTextExcluido.Text));
+            try
+            {
+                ClasseMidia.Excluir(Convert.ToInt16(maskedTextExcluido.Text));
+                MessageBox.Show("Mídia excluída com sucesso !!!");
+            }
+            catch
+            {
+                MessageBox.Show("Mídia não encontrada !!!");
+            }
         }
 
        

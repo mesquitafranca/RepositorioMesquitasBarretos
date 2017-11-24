@@ -17,7 +17,7 @@ namespace ProjetosMesquitasBarretos
         public Tela1()
         {
             InitializeComponent();
-
+            button1.Enabled = false;
             
 
         }
@@ -110,9 +110,12 @@ namespace ProjetosMesquitasBarretos
         }
         private void PreencheObjeto(string[] arquivotexto, int verificamidia)
         {
+            
             minhalista = new Lista();
+           
             for (int i = 0; i < arquivotexto.Length; i++)
             {
+                bool existe = false;
                 string aux = "";
                 string[] informacao = arquivotexto[i].Split('|');
                 for (int p = 0; p < informacao.Length; p++)
@@ -124,7 +127,7 @@ namespace ProjetosMesquitasBarretos
                     }
 
                 }
-                if (aux == "Música" && verificamidia == 3 || aux == "Música" && verificamidia == -1)
+                if (aux == "Música" && verificamidia == 3 || aux == "Música" && verificamidia == -1 || aux == "Música" && verificamidia == 4)
                     {
                         musica = new ClassMusica();
                         musica.Id = Convert.ToInt16(informacao[1]);
@@ -138,6 +141,42 @@ namespace ProjetosMesquitasBarretos
                         musica.Anodelancamento = Convert.ToInt32(informacao[17]);
                         musica.ValidaCaminho();
                         minhalista.InserirNoFim(musica);
+                        if (verificamidia == 4)
+                        {
+                            for (int p = 0; p < comboBox1.Items.Count;p++ )
+                            {
+                                if (musica.Album == comboBox1.Items[p].ToString())
+                                    existe = true;
+                            }
+                            if (existe == false)
+                                comboBox1.Items.Add(musica.Album);
+
+                            if(comboBox1.SelectedIndex != -1)
+                            {
+                                string album = comboBox1.SelectedItem.ToString();
+                                if (listaauxiliar != null)
+                                {
+                                    if (listaauxiliar.PesquisaAlbum(album) == true)
+                                    {
+                                        if(musica.Album == album)
+                                        listaauxiliar.InserirNoFim(musica);
+                                    }
+                                    else
+                                    {
+                                        listaauxiliar = new Lista();
+                                        listaauxiliar.InserirNoInicio(musica);
+                                    }
+                                }
+                                else
+                                {
+                                    listaauxiliar = new Lista();
+                                    listaauxiliar.InserirNoInicio(musica);
+                                }
+                                
+                                
+                            }
+                        }
+                        if(verificamidia != 4)
                         listBox1.Items.Add(musica.ToString());
                         
                         
@@ -239,22 +278,29 @@ namespace ProjetosMesquitasBarretos
 
         private void anoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            button1.Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string[] dados = File.ReadAllLines("Mídia.txt");
-            
-            string[] posicoes = ProcuraPorAno(Convert.ToInt32(textanopesq.Text));
-            string[] vetano = new string[posicoes.Length];
-            for (int i = 0; i < posicoes.Length; i++)
+            try
             {
-                if (Convert.ToInt32(posicoes[i]) < Convert.ToInt32(posicoes[0]))
-                    break;
-                vetano[i] = dados[Convert.ToInt32(posicoes[i])];
+                string[] dados = File.ReadAllLines("Mídia.txt");
+
+                string[] posicoes = ProcuraPorAno(Convert.ToInt32(textanopesq.Text));
+                string[] vetano = new string[posicoes.Length];
+                for (int i = 0; i < posicoes.Length; i++)
+                {
+                    if (Convert.ToInt32(posicoes[i]) < Convert.ToInt32(posicoes[0]))
+                        break;
+                    vetano[i] = dados[Convert.ToInt32(posicoes[i])];
+                }
+                PreencheObjeto(vetano, -1);
             }
-            PreencheObjeto(vetano, -1);
+            catch
+            {
+                MessageBox.Show("Digite um ano válido !!!");
+            }
            
         }
 
@@ -292,6 +338,8 @@ namespace ProjetosMesquitasBarretos
             }
             return vetaux;
         }
+
+        
 
         private string[] OrdemAlfabética()
         {
@@ -408,7 +456,8 @@ namespace ProjetosMesquitasBarretos
 
         private void álbunsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            string[] arquivotexto = File.ReadAllLines("Mídia.txt");
+            PreencheObjeto(arquivotexto, 4);
         }
         int tempodecorrido = 0;
         int tempo = 0;
@@ -498,6 +547,12 @@ namespace ProjetosMesquitasBarretos
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] arquivotexto = File.ReadAllLines("Mídia.txt");
+            PreencheObjeto(arquivotexto, 4);
         }
     }
 }

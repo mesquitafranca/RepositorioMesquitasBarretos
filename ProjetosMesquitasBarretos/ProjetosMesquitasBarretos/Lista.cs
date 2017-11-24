@@ -135,7 +135,7 @@ namespace ProjetosMesquitasBarretos
             return false;
         }
 
-        public bool PesquisaAlbum(ClassMusica album)
+        public bool PesquisaAlbum(string album)
         {
             Nodo aux = primeiro;
             ClassMusica m = new ClassMusica();
@@ -145,7 +145,7 @@ namespace ProjetosMesquitasBarretos
                 {
                     m = aux.Dado as ClassMusica;
                 }
-                if (m.Album == album.Album)
+                if (m.Album == album)
                     return true;
                 aux = aux.Proximo;
             }
