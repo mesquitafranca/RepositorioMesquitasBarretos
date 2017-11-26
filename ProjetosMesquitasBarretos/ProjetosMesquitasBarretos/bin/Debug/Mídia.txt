@@ -1,4 +1,3 @@
-Id|1|Nome|DELIRIUM|Álbum|DELIRIUM|Descrição|METAL|Dados|H:\auxilio\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\bin\Debug\Mídias\delirium.mp3|Formato|mp3|Duração|120|Volume|6|Ano de Lançamento|2016|Música
 Id|2|Nome|PÂNICO|Descrição|METAL|Dados|C:\Users\Bruno\Desktop\auxilio\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\bin\Debug\Mídias\PÂNICO.mp4|Formato|MP4|Idioma|Inglês|Legenda|False|Ano de Lançamento|2017|Vídeo
 Id|3|Nome|CAPA|Descrição|fotinho|Dados|C:\Users\Bruno\Desktop\auxilio\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\bin\Debug\Mídias\capa.jpg|Local|DESERTO|MegaPixels|500|Tempo|3|Formato|jpg|Ano de Lançamento|2016|Foto
-Id|5|Nome|THE HOUSE OF SHAME|Álbum|DELIRIUM|Descrição|METAL|Dados|C:\Users\Bruno\Desktop\auxilio\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\bin\Debug\Mídias\The House of Shame.mp3|Formato|mp3|Duração|120|Volume|5|Ano de Lançamento|2016|Música
+Id|1|Nome|Abertura|Álbum|Se|Descrição|Ab|Dados|00 - Abertura.mp3|Formato|mp3|Duração|345|Volume|8|Ano de Lançamento|1234|Música

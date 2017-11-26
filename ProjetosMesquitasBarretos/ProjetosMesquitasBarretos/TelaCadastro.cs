@@ -144,8 +144,9 @@ namespace ProjetosMesquitasBarretos
                 if (Directory.Exists(pastaMídias) == false)
                     Directory.CreateDirectory(pastaMídias);
 
-                string nomeDestino = pastaMídias + Path.GetFileName(openFileDialog1.FileName);
-                File.Copy(openFileDialog1.FileName, nomeDestino, true);
+                string nomeDestino = Path.GetFileName(openFileDialog1.FileName)  ;
+                string nomeDestinoCompleto = pastaMídias + nomeDestino;
+                File.Copy(openFileDialog1.FileName, nomeDestinoCompleto, true);
                 labelLink.Text = nomeDestino;
                 labelLink.Visible = true;
             }
