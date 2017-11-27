@@ -71,6 +71,7 @@
             this.btnExcluirMidia = new System.Windows.Forms.Button();
             this.labelAno = new System.Windows.Forms.Label();
             this.TextBoxAno = new System.Windows.Forms.MaskedTextBox();
+            this.btnalterar = new System.Windows.Forms.Button();
             this.groupBoxLegenda.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -354,7 +355,7 @@
             // labelTempo
             // 
             this.labelTempo.AutoSize = true;
-            this.labelTempo.Location = new System.Drawing.Point(23, 303);
+            this.labelTempo.Location = new System.Drawing.Point(23, 307);
             this.labelTempo.Name = "labelTempo";
             this.labelTempo.Size = new System.Drawing.Size(52, 17);
             this.labelTempo.TabIndex = 36;
@@ -394,7 +395,7 @@
             // 
             // textAlbum
             // 
-            this.textAlbum.Location = new System.Drawing.Point(108, 300);
+            this.textAlbum.Location = new System.Drawing.Point(108, 302);
             this.textAlbum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textAlbum.Name = "textAlbum";
             this.textAlbum.Size = new System.Drawing.Size(121, 22);
@@ -404,7 +405,7 @@
             // labelArtista
             // 
             this.labelArtista.AutoSize = true;
-            this.labelArtista.Location = new System.Drawing.Point(22, 340);
+            this.labelArtista.Location = new System.Drawing.Point(22, 342);
             this.labelArtista.Name = "labelArtista";
             this.labelArtista.Size = new System.Drawing.Size(48, 17);
             this.labelArtista.TabIndex = 41;
@@ -477,11 +478,23 @@
             this.TextBoxAno.Size = new System.Drawing.Size(132, 22);
             this.TextBoxAno.TabIndex = 48;
             // 
+            // btnalterar
+            // 
+            this.btnalterar.Location = new System.Drawing.Point(332, 581);
+            this.btnalterar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnalterar.Name = "btnalterar";
+            this.btnalterar.Size = new System.Drawing.Size(100, 28);
+            this.btnalterar.TabIndex = 49;
+            this.btnalterar.Text = "Alterar";
+            this.btnalterar.UseVisualStyleBackColor = true;
+            this.btnalterar.Click += new System.EventHandler(this.btnalterar_Click);
+            // 
             // TelaCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(604, 622);
+            this.Controls.Add(this.btnalterar);
             this.Controls.Add(this.TextBoxAno);
             this.Controls.Add(this.labelAno);
             this.Controls.Add(this.btnExcluirMidia);
@@ -579,5 +592,6 @@
         private System.Windows.Forms.Button btnExcluirMidia;
         private System.Windows.Forms.Label labelAno;
         private System.Windows.Forms.MaskedTextBox TextBoxAno;
+        private System.Windows.Forms.Button btnalterar;
     }
 }

@@ -141,5 +141,24 @@ namespace ProjetosMesquitasBarretos
                 return;
         }
 
+        static public void Alterar(string dados)
+        {
+            string[] conteudo = File.ReadAllLines("Mídia.txt");
+            string[] alterado = dados.Split('|');
+            for(int i=0;i<conteudo.Length;i++)
+            {
+                string[] linhacomparada = conteudo[i].Split('|');
+                if(linhacomparada[1] == alterado [1])
+                {
+                    conteudo[i] = dados;
+                    File.WriteAllLines("Mídia.txt", conteudo);
+                }
+            }
+
+        }
+
     }
 }
+
+
+

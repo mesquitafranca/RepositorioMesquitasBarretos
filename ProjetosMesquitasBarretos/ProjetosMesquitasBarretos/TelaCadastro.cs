@@ -284,6 +284,31 @@ namespace ProjetosMesquitasBarretos
             }
         }
 
+        private void btnalterar_Click(object sender, EventArgs e)
+        {
+            if(radioMusica.Checked == true)
+            {
+                string dados = "Id" + "|" + textId.Text + "|" + "Nome" + "|" + textNome.Text + "|" + "Álbum" + "|" + textAlbum.Text + "|" + "Descrição" + "|" + textDescricao.Text + "|" + "Dados" + "|" + labelLink.Text + "|" + "Formato" + "|" + cbFormato.SelectedItem + "|" + "Duração" + "|" + textDuracao.Text + "|" + "Volume" + "|" + textVolume.Text + "|" + "Ano de Lançamento" + "|" + TextBoxAno.Text + "|" + "Música" ;
+                ClasseMidia.Alterar(dados);
+            }
+            if(radioVideo.Checked == true)
+            {
+                 string legenda = "";
+                 if (rbSim.Checked == true)
+                 {
+                     legenda = "Sim";
+                     legenda = "Não";
+                 }
+                 string dados = "Id" + "|" + textId.Text + "|" + "Nome" + "|" + textNome.Text + "|" + "Descrição" + "|" + textDescricao.Text + "|" + "Dados" + "|" + labelLink.Text + "|" + "Formato" + "|" + cbFormato.SelectedItem + "|" + "Idioma" + "|" + cbIdioma.SelectedItem + "|" + "Legenda" + "|" + legenda + "|" + "Ano de Lançamento" + "|" + TextBoxAno.Text + "|" + "Vídeo" ;
+                 ClasseMidia.Alterar(dados);
+            }
+            if(radioFoto.Checked == true)
+            {
+                string dados = "Id" + "|" + textId.Text + "|" + "Nome" + "|" + textNome.Text + "|" + "Descrição" + "|" + textDescricao.Text + "|" + "Dados" + "|" + labelLink.Text + "|" + "Local" + "|" + textLocal.Text + "|" + "MegaPixels" + "|" + textMegaPixels.Text + "|" + "Tempo" + "|" + textTempo.Text + "|" + "Formato" + "|" + cbFormato.SelectedItem + "|" + "Ano de Lançamento" + "|" + TextBoxAno.Text + "|" + "Foto";
+                ClasseMidia.Alterar(dados);
+            }
+        }
+
        
     }
 }
