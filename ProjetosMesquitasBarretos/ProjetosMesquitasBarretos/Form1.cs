@@ -346,7 +346,38 @@ namespace ProjetosMesquitasBarretos
             return vetaux;
         }
 
-        
+        private string[] OrdemDescricao()
+        {
+            string[] arquivotexto = File.ReadAllLines("Mídia.txt");
+            int contador = 0;
+            string varaux;
+            string[] nome = new string[arquivotexto.Length];
+            for (int t = 0; t < arquivotexto.Length; t++)
+            {
+                string[] aux = arquivotexto[t].Split('|');
+                for(int p =0;p<aux.Length;p++)
+                {
+                    if (aux[p] == "Descrição")
+                        nome[t] = aux[p + 1];
+                }
+            }
+
+            for (int i = 0; i < nome.Length - 1; i++)
+            {
+                contador = i;
+                for (int j = i + 1; j < nome.Length; j++)
+                {
+                    if (nome[j].CompareTo(nome[contador]) == -1)
+                        contador = j;
+                }
+                varaux = arquivotexto[contador];
+                arquivotexto[contador] = arquivotexto[i];
+                arquivotexto[i] = varaux;
+            }
+
+            return arquivotexto;
+
+        }
 
         private string[] OrdemAlfabética()
         {
@@ -459,7 +490,7 @@ namespace ProjetosMesquitasBarretos
         {
             listBox1.Items.Clear();
             string[] arquivotexto = File.ReadAllLines("Mídia.txt");
-            PreencheObjeto(arquivotexto, -1);
+            PreencheObjeto(OrdemDescricao(), -1);
             
         }
 
@@ -490,7 +521,7 @@ namespace ProjetosMesquitasBarretos
                 else if(objaux is ClassMusica)
                 {
                     extencao = (objaux as ClassMusica).Fmusica.ToString();
-                    axWindowsMediaPlayer1.settings.volume = (objaux as ClassMusica).Volume * 100;
+                    axWindowsMediaPlayer1.settings.volume = (objaux as ClassMusica).Volume * 10;
                 }
                 else if (objaux is ClasseVídeo)
                 {
@@ -534,7 +565,7 @@ namespace ProjetosMesquitasBarretos
                     else if (objaux is ClassMusica)
                     {
                         extencao = (objaux as ClassMusica).Fmusica.ToString();
-                        axWindowsMediaPlayer1.settings.volume = (objaux as ClassMusica).Volume * 100;
+                        axWindowsMediaPlayer1.settings.volume = (objaux as ClassMusica).Volume;
                     }
                     else if (objaux is ClasseVídeo)
                     {
