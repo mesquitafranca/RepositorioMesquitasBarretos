@@ -134,7 +134,7 @@
             this.listBox1.Location = new System.Drawing.Point(937, 326);
             this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(252, 164);
+            this.listBox1.Size = new System.Drawing.Size(334, 164);
             this.listBox1.TabIndex = 9;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 

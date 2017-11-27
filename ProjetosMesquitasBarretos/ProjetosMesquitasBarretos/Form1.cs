@@ -173,8 +173,8 @@ namespace ProjetosMesquitasBarretos
                                     listaauxiliar = new Lista();
                                     listaauxiliar.InserirNoInicio(musica);
                                 }
-                                
-                                
+
+                                listBox1.Items.Add(musica.ToString());
                             }
                         }
                         if(verificamidia != 4)

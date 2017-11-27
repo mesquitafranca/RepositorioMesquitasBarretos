@@ -107,7 +107,7 @@ namespace ProjetosMesquitasBarretos
 
         public virtual string ToString()
         {
-            return ("Id:" + Id + "-" + "Nome:" + Nome + "-" + "Local: " + ArquivoDeDados);
+            return ("Id:" + Id + "-" + "Nome:" + Nome + "-" + "Descrição: " + Descrição);
         }
         static public void Excluir(int m)
         {
