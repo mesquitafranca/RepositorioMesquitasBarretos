@@ -104,6 +104,7 @@ namespace ProjetosMesquitasBarretos
 
         private void aToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             string[] dados = File.ReadAllLines("Mídia.txt");
             PreencheObjeto(dados, -1);
 
@@ -231,6 +232,7 @@ namespace ProjetosMesquitasBarretos
         Lista listaauxiliar;
         private void bToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             string[] arquivotexto = File.ReadAllLines("Mídia.txt");
             try
             {
@@ -248,7 +250,9 @@ namespace ProjetosMesquitasBarretos
             string[] arquivotexto = File.ReadAllLines("Mídia.txt");
             try
             {
+                listBox1.Items.Clear();
                 PreencheObjeto(arquivotexto, 1);
+                
                 
             }
             catch
@@ -263,7 +267,9 @@ namespace ProjetosMesquitasBarretos
             string[] arquivotexto = File.ReadAllLines("Mídia.txt");
             try
             {
+                listBox1.Items.Clear();
                 PreencheObjeto(arquivotexto, 2);
+                
                 btnIniciar.Enabled = true;
             }
             catch
@@ -278,6 +284,7 @@ namespace ProjetosMesquitasBarretos
 
         private void anoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             button1.Enabled = true;
         }
 
@@ -372,6 +379,7 @@ namespace ProjetosMesquitasBarretos
 
         private void ordemAlfabéticaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             string[] vetoremordem = OrdemAlfabética();
             PreencheObjeto(vetoremordem, -1);
             
@@ -449,6 +457,7 @@ namespace ProjetosMesquitasBarretos
 
         private void filaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             string[] arquivotexto = File.ReadAllLines("Mídia.txt");
             PreencheObjeto(arquivotexto, -1);
             
@@ -456,6 +465,7 @@ namespace ProjetosMesquitasBarretos
 
         private void álbunsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             string[] arquivotexto = File.ReadAllLines("Mídia.txt");
             PreencheObjeto(arquivotexto, 4);
         }
