@@ -526,6 +526,7 @@ namespace ProjetosMesquitasBarretos
                 else if (objaux is ClasseVídeo)
                 {
                     extencao = (objaux as ClasseVídeo).Fvideo.ToString();
+                    axWindowsMediaPlayer1.settings.volume = 30;
                 }
                 
                 string conteudo = pastafotos+objaux.Nome.ToLower()+"."+extencao;

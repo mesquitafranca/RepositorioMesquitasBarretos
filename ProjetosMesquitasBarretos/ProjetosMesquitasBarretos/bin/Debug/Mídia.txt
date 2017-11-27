@@ -1,3 +1,4 @@
-Id|2|Nome|PÂNICO|Descrição|METAL|Dados|C:\Users\Bruno\Desktop\auxilio\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\bin\Debug\Mídias\PÂNICO.mp4|Formato|MP4|Idioma|Inglês|Legenda|False|Ano de Lançamento|2017|Vídeo
 Id|3|Nome|CAPA|Descrição|fotinho|Dados|C:\Users\Bruno\Desktop\auxilio\ProjetosMesquitasBarretos\ProjetosMesquitasBarretos\bin\Debug\Mídias\capa.jpg|Local|DESERTO|MegaPixels|500|Tempo|3|Formato|jpg|Ano de Lançamento|2016|Foto
 Id|1|Nome|MY DEMONS|Álbum|DELIRIUM|Descrição|METAL|Dados|my demons.mp3|Formato|mp3|Duração|120|Volume|1|Ano de Lançamento|2016|Música
+Id|4|Nome|INSANE|Descrição|CC ÁLBUM|Dados|insane.mp4|Formato|MP4|Idioma|Inglês|Legenda|False|Ano de Lançamento|2017|Vídeo
+Id|2|Nome|ROMERO|Descrição|BELO DOMÍNIO|Dados|romero.mp4|Formato|MP4|Idioma|Inglês|Legenda|False|Ano de Lançamento|2017|Vídeo
